@@ -33,7 +33,13 @@ services:
       - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
+  cache:
+    image: semtech/mu-cache:2.0.2
+    links:
+      - resource:backend
   resource:
     image: semtech/mu-cl-resources:1.20.0
     volumes:
       - ./config/resources:/config
+    environment:
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
