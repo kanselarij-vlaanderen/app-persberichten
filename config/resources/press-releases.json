@@ -16,5 +16,22 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#"
   },
   "resources": {
+    "organizations": {
+      "class": "vcard:Organization",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "new-resource-base": "http://themis.vlaanderen.be/id/organization/"
+    }
   }
 }
