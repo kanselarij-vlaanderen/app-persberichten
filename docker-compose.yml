@@ -8,6 +8,14 @@ services:
     volumes:
       - ./config/dispatcher:/config
   database:
+    image: semtech/mu-authorization:0.6.0-beta.7
+    environment:
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
+      DATABASE_COMPATIBILITY: "Virtuoso"
+      DATABASE_OVERLOAD_RECOVERY: "on"
+    volumes:
+      - ./config/authorization:/config
+  triplestore:
     image: tenforce/virtuoso:1.3.2-virtuoso7.2.2
     environment:
       SPARQL_UPDATE: "true"
