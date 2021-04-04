@@ -43,3 +43,7 @@ services:
       - ./config/resources:/config
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+  file:
+    image: semtech/mu-file-service:3.1.2
+    volumes:
+      - ./data/files:/share
