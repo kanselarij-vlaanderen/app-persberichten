@@ -27,6 +27,12 @@ services:
     image: semtech/mu-delta-notifier:0.1.0
     volumes:
       - ./config/delta:/config
+  migrations:
+    image: semtech/mu-migrations-service:0.7.0
+    links:
+      - triplestore:database
+    volumes:
+      - ./config/migrations:/data/migrations
   resource:
     image: semtech/mu-cl-resources:1.20.0
     volumes:
