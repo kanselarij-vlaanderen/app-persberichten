@@ -16,22 +16,22 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#"
   },
   "resources": {
-    "organizations": {
-      "class": "vcard:Organization",
+    "publication-channels": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/publicatiekanaal/",
+      "class": "ebucore:PublicationChannel",
       "attributes": {
-        "name": {
+        "publicationChannelName": {
           "type": "string",
-          "predicate": "vcard:fn"
+          "predicate": "ebucore:publicationChannelName"
         },
-        "identifier": {
+        "uuid": {
           "type": "string",
-          "predicate": "dct:identifier"
+          "predicate": "mu:uuid"
         }
       },
       "features": [
         "include-uri"
-      ],
-      "new-resource-base": "http://themis.vlaanderen.be/id/organization/"
+      ]
     }
   }
 }

@@ -20,8 +20,8 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  get "/organizations/*path", @json do
-    forward conn, path, "http://cache/organizations/"
+  get "/publicatiekanaal/*path", @any do
+    forward conn, path, "http://cache/publication-channels/"
   end
 
   match "_", %{ last_call: true } do
