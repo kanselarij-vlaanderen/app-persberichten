@@ -32,6 +32,132 @@
       "features": [
         "include-uri"
       ]
+    },
+    "contacts": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact/",
+      "class": "ebucore:Contact",
+      "attributes": {
+        "honorificPrefix": {
+          "type": "string",
+          "predicate": "vcard:honnorific-prefix"
+        },
+        "fh": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "given-name": {
+          "type": "string",
+          "predicate": "vcard:given-name"
+        },
+        "family-name": {
+          "type": "string",
+          "predicate": "vcard:family-name"
+        },
+        "role": {
+          "type": "string",
+          "predicate": "vcard:role"
+        },
+        "modified": {
+          "type": "dateTime",
+          "predicate": "dct:modified"
+        },
+        "contact-status": {
+          "type": "string",
+          "predicate": "adms:status"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "relationships": {
+        "mobile-phone": {
+          "predicate": "ext:hasMobile",
+          "target": "mobile-phones",
+          "cardinality": "one",
+          "inverse": false
+        },
+        "telephone": {
+          "predicate": "ext:hasTelephone",
+          "target": "telephones",
+          "cardinality": "one",
+          "inverse": false
+        },
+        "mail-address": {
+          "predicate": "ext:hasEmail",
+          "target": "mail-addresses",
+          "cardinality": "one",
+          "inverse": false
+        }
+      }
+    },
+    "organizations": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/organizaties/",
+      "class": "vcard:Organization",
+      "attributes": {
+        "fn": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "mobile-phones": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/mobiele-telefoon/",
+      "class": "vcard:Cell",
+      "attributes": {
+        "hasValue": {
+          "type": "uri",
+          "predicate": "vcard:hasValue"
+        },
+        "publicationChannel": {
+          "type": "uri",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "telephones": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/telefoon/",
+      "class": "vcard:Voice",
+      "attributes": {
+        "hasValue": {
+          "type": "uri",
+          "predicate": "vcard:hasValue"
+        },
+        "publicationChannel": {
+          "type": "uri",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "mail-addresses": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/email-adres/",
+      "class": "vcard:Email",
+      "attributes": {
+        "hasValue": {
+          "type": "uri",
+          "predicate": "vcard:hasValue"
+        },
+        "publicationChannel": {
+          "type": "uri",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
     }
+
   }
 }
