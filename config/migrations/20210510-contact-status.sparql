@@ -1,0 +1,15 @@
+PREFIX vlcs: <http://themis.vlaanderen.be/id/concept/contact-status/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+       GRAPH <http://mu.semte.ch/graphs/public> {
+
+       vlcs:83417b98-d3eb-415c-afc5-6cd9ca3560dc a skos:Concept, ext:ContactStatus ;
+                                                                                   vcard:fn "Kabinet van de minister-president van de Vlaamse Regering en Vlaams minister van Buitenlandse Zaken, Cultuur, Digitalisering en Facilitair Management" ;
+                                                                                   dct:identifier "OVO036366" ;
+                                                                                   mu:uuid "83417b98-d3eb-415c-afc5-6cd9ca3560dc" .
+}
+}

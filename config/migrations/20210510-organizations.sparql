@@ -1,0 +1,58 @@
+PREFIX vlorg: <https://data.vlaanderen.be/id/organisatie/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX org:  <http://www.w3.org/ns/org#>
+PREFIX ISOcat: <http://www.isocat.org/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+GRAPH <http://mu.semte.ch/graphs/public> {
+
+    vlorg:bd76aa64-4295-411b-4cbc-9fd1a0d0ad8f a vcard:Organization ;
+                                             vcard:fn "Kabinet van de minister-president van de Vlaamse Regering en Vlaams minister van Buitenlandse Zaken, Cultuur, Digitalisering en Facilitair Management" ;
+                                             dct:identifier "OVO036366" ;
+                                             mu:uuid "bd76aa64-4295-411b-4cbc-9fd1a0d0ad8f" .
+
+    vlorg:cae0b56b-b092-0d0f-6e48-2121e0ce4873 a vcard:Organization ;
+                                               vcard:fn "Kabinet van de viceminister-president van de Vlaamse Regering en Vlaams minister van Binnenlands Bestuur, Bestuurszaken, Inburgering en Gelijke Kansen" ;
+                                               dct:identifier "OVO036372" ;
+                                               mu:uuid "cae0b56b-b092-0d0f-6e48-2121e0ce4873" .
+
+    vlorg:25cd0094-0f57-32fd-4131-a6c0e604c258 a vcard:Organization ;
+                                             vcard:fn "Kabinet van de viceminister-president van de Vlaamse Regering en Vlaams minister van Economie, Innovatie, Werk, Sociale economie en Landbouw" ;
+                                             dct:identifier "OVO036368" ;
+                                             mu:uuid "25cd0094-0f57-32fd-4131-a6c0e604c258" .
+
+    vlorg:4b83f52b-1b70-1e9f-1157-dffdd4a6015f a vcard:Organization ;
+                                               vcard:fn "Kabinet van de viceminister-president van de Vlaamse Regering en Vlaams minister van Onderwijs, Sport, Dierenwelzijn en Vlaamse Rand" ;
+                                               dct:identifier "OVO036370" ;
+                                               mu:uuid "4b83f52b-1b70-1e9f-1157-dffdd4a6015f" .
+
+    vlorg:e590a821-6c9f-b836-c0fe-91999bfcddab a vcard:Organization ;
+                                               vcard:fn "Kabinet van de Vlaamse minister van Brussel, Jeugd en Media" ;
+                                               dct:identifier "OVO036375" ;
+                                               mu:uuid "e590a821-6c9f-b836-c0fe-91999bfcddab" .
+
+    vlorg:aaa91356-1201-a0b1-5ad5-a2e9689a9d21 a vcard:Organization ;
+                                               vcard:fn "Kabinet van de Vlaamse minister van Financiën en Begroting, Wonen en Onroerend Erfgoed" ;
+                                               dct:identifier "OVO036376" ;
+                                               mu:uuid "aaa91356-1201-a0b1-5ad5-a2e9689a9d21" .
+
+    vlorg:289c52d8-4891-e110-cd80-c32f6e12d74d a vcard:Organization ;
+                                               vcard:fn "Kabinet van de Vlaamse minister van Justitie en Handhaving, Omgeving, Energie en Toerisme" ;
+                                               dct:identifier "OVO036377" ;
+                                               mu:uuid "289c52d8-4891-e110-cd80-c32f6e12d74d" .
+
+    vlorg:ec081548-4a0a-ac53-2be3-a9e39d903f1d a vcard:Organization ;
+                                               vcard:fn "Kabinet van de Vlaamse minister van Mobiliteit en Openbare Werken" ;
+                                               dct:identifier "OVO036378" ;
+                                               mu:uuid "ec081548-4a0a-ac53-2be3-a9e39d903f1d" .
+
+    vlorg:939c6810-34a3-0d9d-e5f1-85e22172dd16 a vcard:Organization ;
+                                               vcard:fn "Kabinet van de Vlaamse minister van Welzijn, Volksgezondheid, Gezin en Armoedebestrijding" ;
+                                               dct:identifier "OVO036374" ;
+                                               mu:uuid "939c6810-34a3-0d9d-e5f1-85e22172dd16" .
+
+}
+}
