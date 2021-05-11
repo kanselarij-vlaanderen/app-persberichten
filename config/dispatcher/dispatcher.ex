@@ -20,27 +20,27 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  get "/publicatiekanalen/*path", @any do
+  get "/publication-channels/*path", @any do
     forward conn, path, "http://cache/publication-channels/"
   end
 
-  match "/contacten/*path", @any do
+  match "/contacts/*path", @any do
     forward conn, path, "http://cache/contacts/"
   end
 
-  match "/emailadressen/*path", @any do
+  match "/mail-addresses/*path", @any do
     forward conn, path, "http://cache/mail-addresses/"
   end
 
-  match "/telefoons/*path", @any do
+  match "/telephones/*path", @any do
     forward conn, path, "http://cache/telephones/"
   end
 
-  match "/mobieletelefoons/*path", @any do
+  match "/mobile-phones/*path", @any do
     forward conn, path, "http://cache/mobile-phones/"
   end
 
-  get "/organizaties/*path", @any do
+  get "/organizations/*path", @any do
     forward conn, path, "http://cache/organizations/"
   end
 

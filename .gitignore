@@ -4,6 +4,7 @@
 !/data/db/toLoad
 !/data/db/toLoad/*
 /data/files/*
+/test/node_modules/
 
 docker-compose.override.yml
 
