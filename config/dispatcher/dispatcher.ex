@@ -44,6 +44,22 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/organizations/"
   end
 
+  get "/contact-status/*path", @any do
+    forward conn, path, "http://cache/contact-status/"
+  end
+
+  get "/themes/*path", @any do
+    forward conn, path, "http://cache/themes/"
+  end
+
+  match "/press-releases/*path", @any do
+    forward conn, path, "http://cache/press-releases/"
+  end
+
+  match "/publication-events/*path", @any do
+    forward conn, path, "http://cache/publication-events/"
+  end
+
   match "_", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end

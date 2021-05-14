@@ -29,6 +29,31 @@
           "predicate": "mu:uuid"
         }
       },
+      "relationships": {
+        "hasChannelPublicationEvent": {
+          "predicate": "ebucore:hasChannelPublicationEvent",
+          "target": "publication-events",
+          "cardinality": "many",
+          "inverse": false
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "contact-status": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact-status/",
+      "class": "ext:ContactStatus",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        },
+        "uuid": {
+          "type": "string",
+          "predicate": "mu:uuid"
+        }
+      },
       "features": [
         "include-uri"
       ]
@@ -60,6 +85,10 @@
         "modified": {
           "type": "dateTime",
           "predicate": "dct:modified"
+        },
+        "created": {
+          "type": "dateTime",
+          "predicate": "dct:created"
         },
         "contact-status": {
           "type": "string",
@@ -157,7 +186,86 @@
       "features": [
         "include-uri"
       ]
+    },
+    "publication-events": {
+      "new-resource-base": "http://themis.vlaanderen.be/persbericht/",
+      "class": "ebucore:PublicationEvent",
+      "attributes": {
+        "publishedStartDateTime": {
+          "type": "dateTime",
+          "predicate": "ebucore:publishedStartDateTime"
+        },
+        "publicationStartDateTime": {
+          "type": "dateTime",
+          "predicate": "ebucore:publicationStartDateTime"
+        },
+        "publicationEndDateTime": {
+          "type": "dateTime",
+          "predicate": "ebucore:publicationEndDateTime"
+        }
+      }
+    },
+    "press-releases": {
+      "new-resource-base": "http://themis.vlaanderen.be/persbericht/",
+      "class": "fabio:PressRelease",
+      "attributes": {
+        "title": {
+          "type": "string",
+          "predicate": "nie:title"
+        },
+        "htmlContent": {
+          "type": "string",
+          "predicate": "nie:title"
+        },
+        "abstract": {
+          "type": "string",
+          "predicate": "dct:abstract"
+        },
+        "created": {
+          "type": "dateTime",
+          "predicate": "dct:created"
+        },
+        "modified": {
+          "type": "dateTime",
+          "predicate": "dct:modified"
+        },
+        "keyword": {
+          "type": "string",
+          "predicate": "nie:keyword"
+        },
+        "theme": {
+          "type": "Theme",
+          "predicate": "dcat:theme"
+        }
+      },
+      "relationships": {
+        "isScheduledOn": {
+          "predicate": "ebucore:isScheduledOn",
+          "target": "publication-events",
+          "cardinality": "one",
+          "inverse": false
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "themes": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/thema/",
+      "class": "dcat:theme",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        },
+        "uuid": {
+          "type": "string",
+          "predicate": "mu:uuid"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
     }
-
   }
 }

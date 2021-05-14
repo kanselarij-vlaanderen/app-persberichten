@@ -1,0 +1,27 @@
+PREFIX vlpc: <https://data.vlaanderen.be/id/publicatiekanaal/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>
+
+
+INSERT DATA {
+GRAPH <http://mu.semte.ch/graphs/public> {
+
+    vlpc:04a5d121-c991-493c-b645-b0c67cc53cf6 a ebucore:PublicationChannel ;
+                                              ebucore:publicationChannelName "Belga" ;
+                                              mu:uuid "04a5d121-c991-493c-b645-b0c67cc53cf6" .
+
+    vlpc:25421c3d-9d3c-4378-91e5-a13103ad3e43 a ebucore:PublicationChannel ;
+                                              ebucore:publicationChannelName "Website vlaanderen.be" ;
+                                              mu:uuid "25421c3d-9d3c-4378-91e5-a13103ad3e43" .
+
+    vlpc:c06c30f5-d9e9-490e-822c-43faa9d0b25e a ebucore:PublicationChannel ;
+                                              ebucore:publicationChannelName "Abonnees vlaanderen.be" ;
+                                              mu:uuid "c06c30f5-d9e9-490e-822c-43faa9d0b25e" .
+
+    vlpc:c184f026-feaa-4899-ba06-fd3a03df599c a ebucore:PublicationChannel ;
+                                              ebucore:publicationChannelName "Eigen verzendlijsten" ;
+                                              mu:uuid "c184f026-feaa-4899-ba06-fd3a03df599c" .
+
+}
+}
