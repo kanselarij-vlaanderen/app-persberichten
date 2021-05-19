@@ -14,7 +14,7 @@
     "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "prov": ""
+    "prov": "http://www.w3.org/ns/prov#"
   },
   "resources": {
     "publication-channels": {
@@ -63,10 +63,6 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/contact/",
       "class": "ebucore:Contact",
       "attributes": {
-        "honorificPrefix": {
-          "type": "string",
-          "predicate": "vcard:honnorific-prefix"
-        },
         "fh": {
           "type": "string",
           "predicate": "vcard:fn"
