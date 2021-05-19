@@ -13,7 +13,8 @@
     "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#",
     "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "vcard": "http://www.w3.org/2006/vcard/ns#"
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": ""
   },
   "resources": {
     "publication-channels": {
@@ -244,6 +245,24 @@
           "target": "publication-events",
           "cardinality": "one",
           "inverse": false
+        },
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "organizations",
+          "cardinality": "one",
+          "inverse": false
+        },
+        "used": {
+          "predicate": "prov:used",
+          "target": "collaboration-activities",
+          "cardinality": "one",
+          "inverse": false
+        },
+        "generated": {
+          "predicate": "prov:generated",
+          "target": "collaboration-activities",
+          "cardinality": "one",
+          "inverse": false
         }
       },
       "features": [
@@ -251,7 +270,7 @@
       ]
     },
     "themes": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/thema/",
+      "new-resource-base": "http://themis.vlaanderen.be/id/concept/thema/",
       "class": "dcat:theme",
       "attributes": {
         "label": {
@@ -266,6 +285,16 @@
       "features": [
         "include-uri"
       ]
+    },
+    "collaboration-activities": {
+      "new-resource-base": "http://themis.vlaanderen.be/collaboration-activity/",
+      "class": "ext:CollaborationActivity",
+      "attributes": {
+        "startedAtTime": {
+          "type": "dateTime",
+          "predicate": "prov:startedAtTime"
+        }
+      }
     }
   }
 }

@@ -56,6 +56,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/press-releases/"
   end
 
+  match "/collaboration-activities/*path", @any do
+    forward conn, path, "http://cache/collaboration-activities/"
+  end
+
   match "/publication-events/*path", @any do
     forward conn, path, "http://cache/publication-events/"
   end
