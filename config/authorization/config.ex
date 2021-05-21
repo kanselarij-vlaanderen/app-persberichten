@@ -22,7 +22,7 @@ defmodule Acl.UserGroups.Config do
           graph: "http://mu.semte.ch/graphs/public",
           constraint: %ResourceConstraint{
             resource_types: [
-              "http://mu.semte.ch/vocabularies/ext/ContactStatus",
+              "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact",
               "http://www.w3.org/2006/vcard/ns#Cell",
               "http://www.w3.org/2006/vcard/ns#Voice",
               "http://www.w3.org/2006/vcard/ns#Email",
