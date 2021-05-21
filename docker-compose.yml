@@ -11,6 +11,9 @@ services:
     image: semtech/mu-identifier:1.9.1
     restart: always
     logging: *default-logging
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"},{\"variables\":[],\"name\":\"clean\"}]"
+      LOG_OUTGOING_SPARQL_QUERIES: "true"
   dispatcher:
     image: semtech/mu-dispatcher:2.0.0
     volumes:

@@ -21,7 +21,7 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/publicatiekanaal/",
       "class": "ebucore:PublicationChannel",
       "attributes": {
-        "publicationChannelName": {
+        "publication-channel-name": {
           "type": "string",
           "predicate": "ebucore:publicationChannelName"
         },
@@ -63,7 +63,7 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/contact/",
       "class": "ebucore:Contact",
       "attributes": {
-        "fh": {
+        "full-name": {
           "type": "string",
           "predicate": "vcard:fn"
         },
@@ -113,6 +113,12 @@
           "target": "mail-addresses",
           "cardinality": "one",
           "inverse": false
+        },
+        "organization": {
+          "predicate": "vcard:organization",
+          "target": "organizations",
+          "cardinality": "many",
+          "inverse": true
         }
       }
     },
@@ -120,7 +126,7 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/organizaties/",
       "class": "vcard:Organization",
       "attributes": {
-        "fn": {
+        "full-name": {
           "type": "string",
           "predicate": "vcard:fn"
         },
@@ -137,11 +143,11 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/mobiele-telefoon/",
       "class": "vcard:Cell",
       "attributes": {
-        "hasValue": {
+        "has-value": {
           "type": "uri",
           "predicate": "vcard:hasValue"
         },
-        "publicationChannel": {
+        "publication-channel": {
           "type": "uri",
           "predicate": "ext:publicationChannel"
         }
@@ -154,11 +160,11 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/telefoon/",
       "class": "vcard:Voice",
       "attributes": {
-        "hasValue": {
+        "has-value": {
           "type": "uri",
           "predicate": "vcard:hasValue"
         },
-        "publicationChannel": {
+        "publication-channel": {
           "type": "uri",
           "predicate": "ext:publicationChannel"
         }
@@ -171,11 +177,11 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/email-adres/",
       "class": "vcard:Email",
       "attributes": {
-        "hasValue": {
+        "has-value": {
           "type": "uri",
           "predicate": "vcard:hasValue"
         },
-        "publicationChannel": {
+        "publication-channel": {
           "type": "uri",
           "predicate": "ext:publicationChannel"
         }
@@ -185,18 +191,18 @@
       ]
     },
     "publication-events": {
-      "new-resource-base": "http://themis.vlaanderen.be/persbericht/",
+      "new-resource-base": "http://themis.vlaanderen.be/publicatie-event/",
       "class": "ebucore:PublicationEvent",
       "attributes": {
-        "publishedStartDateTime": {
+        "published-start-date-time": {
           "type": "dateTime",
           "predicate": "ebucore:publishedStartDateTime"
         },
-        "publicationStartDateTime": {
+        "publication-start-date-time": {
           "type": "dateTime",
           "predicate": "ebucore:publicationStartDateTime"
         },
-        "publicationEndDateTime": {
+        "publication-end-date-time": {
           "type": "dateTime",
           "predicate": "ebucore:publicationEndDateTime"
         }
@@ -210,7 +216,7 @@
           "type": "string",
           "predicate": "nie:title"
         },
-        "htmlContent": {
+        "html-content": {
           "type": "string",
           "predicate": "nie:title"
         },
@@ -236,7 +242,7 @@
         }
       },
       "relationships": {
-        "isScheduledOn": {
+        "is-scheduled-on": {
           "predicate": "ebucore:isScheduledOn",
           "target": "publication-events",
           "cardinality": "one",
@@ -286,7 +292,7 @@
       "new-resource-base": "http://themis.vlaanderen.be/collaboration-activity/",
       "class": "ext:CollaborationActivity",
       "attributes": {
-        "startedAtTime": {
+        "started-at-time": {
           "type": "dateTime",
           "predicate": "prov:startedAtTime"
         }

@@ -14,7 +14,7 @@ GRAPH <http://mu.semte.ch/graphs/public> {
                      vcard:fn "Michael Vervloet" ;
                      vcard:given-name "Michael" ;
                      vcard:family-name "Vervloet" ;
-                     vcard:role "admin" ;
+                     vcard:role "woordvoerder" ;
                      adms:status "actief" .
 }
 }

@@ -18,12 +18,20 @@ defmodule Acl.UserGroups.Config do
         name: "public",
         useage: [:read, :write, :read_for_write],
         access: %AlwaysAccessible{},
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/public",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                      ]
-                    } } ] },
+        graphs: [%GraphSpec{
+          graph: "http://mu.semte.ch/graphs/public",
+          constraint: %ResourceConstraint{
+            resource_types: [
+              "http://mu.semte.ch/vocabularies/ext/ContactStatus",
+              "http://www.w3.org/2006/vcard/ns#Cell",
+              "http://www.w3.org/2006/vcard/ns#Voice",
+              "http://www.w3.org/2006/vcard/ns#Email",
+              "http://purl.org/spar/fabio/PressRelease",
+              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity"
+            ]
+          }
+        }]
+      },
 
       # // CLEANUP
       #
