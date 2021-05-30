@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="frontend-persberichten" />
+    <orderEntry type="module" module-name="publicationTaskMicroService" />
   </component>
 </module>

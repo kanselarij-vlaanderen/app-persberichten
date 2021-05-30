@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/app-persberichten.iml" filepath="$PROJECT_DIR$/.idea/app-persberichten.iml" />
       <module fileurl="file://$PROJECT_DIR$/../frontend-persberichten/.idea/frontend-persberichten.iml" filepath="$PROJECT_DIR$/../frontend-persberichten/.idea/frontend-persberichten.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../publicationTaskMicroService/.idea/publicationTaskMicroService.iml" filepath="$PROJECT_DIR$/../publicationTaskMicroService/.idea/publicationTaskMicroService.iml" />
     </modules>
   </component>
 </project>
