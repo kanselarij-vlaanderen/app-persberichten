@@ -195,15 +195,15 @@
       "class": "ebucore:PublicationEvent",
       "attributes": {
         "published-start-date-time": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "ebucore:publishedStartDateTime"
         },
         "publication-start-date-time": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "ebucore:publicationStartDateTime"
         },
         "publication-end-date-time": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "ebucore:publicationEndDateTime"
         }
       }
@@ -225,11 +225,11 @@
           "predicate": "dct:abstract"
         },
         "created": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "dct:created"
         },
         "modified": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "dct:modified"
         },
         "keyword": {
@@ -293,7 +293,7 @@
       "class": "ext:CollaborationActivity",
       "attributes": {
         "started-at-time": {
-          "type": "dateTime",
+          "type": "datetime",
           "predicate": "prov:startedAtTime"
         }
       }

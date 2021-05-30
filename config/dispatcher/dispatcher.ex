@@ -20,47 +20,47 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  get "/publication-channels/*path", @any do
+  get "/publication-channels/*path", @json do
     forward conn, path, "http://cache/publication-channels/"
   end
 
-  match "/contacts/*path", @any do
+  match "/contacts/*path", @json do
     forward conn, path, "http://resource/contacts/"
   end
 
-  match "/mail-addresses/*path", @any do
+  match "/mail-addresses/*path", @json do
     forward conn, path, "http://cache/mail-addresses/"
   end
 
-  match "/telephones/*path", @any do
+  match "/telephones/*path", @json do
     forward conn, path, "http://cache/telephones/"
   end
 
-  match "/mobile-phones/*path", @any do
+  match "/mobile-phones/*path", @json do
     forward conn, path, "http://cache/mobile-phones/"
   end
 
-  get "/organizations/*path", @any do
+  get "/organizations/*path", @json do
     forward conn, path, "http://cache/organizations/"
   end
 
-  get "/contact-status/*path", @any do
+  get "/contact-status/*path", @json do
     forward conn, path, "http://cache/contact-status/"
   end
 
-  get "/themes/*path", @any do
+  get "/themes/*path", @json do
     forward conn, path, "http://cache/themes/"
   end
 
-  match "/press-releases/*path", @any do
+  match "/press-releases/*path", @json do
     forward conn, path, "http://cache/press-releases/"
   end
 
-  match "/collaboration-activities/*path", @any do
+  match "/collaboration-activities/*path", @json do
     forward conn, path, "http://cache/collaboration-activities/"
   end
 
-  match "/publication-events/*path", @any do
+  match "/publication-events/*path", @json do
     forward conn, path, "http://cache/publication-events/"
   end
 
@@ -68,4 +68,7 @@ defmodule Dispatcher do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 
+  match "/files/*path" do
+    forward conn, path, "http://file/files/"
+  end
 end

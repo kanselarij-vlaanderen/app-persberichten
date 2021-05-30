@@ -27,7 +27,8 @@ defmodule Acl.UserGroups.Config do
               "http://www.w3.org/2006/vcard/ns#Voice",
               "http://www.w3.org/2006/vcard/ns#Email",
               "http://purl.org/spar/fabio/PressRelease",
-              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity"
+              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
+              "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
             ]
           }
         }]
