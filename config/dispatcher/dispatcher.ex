@@ -64,11 +64,12 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/publication-events/"
   end
 
+  match "/files/*path" do
+    forward conn, path, "http://file/files/"
+  end
+
   match "_", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
 
-  match "/files/*path" do
-    forward conn, path, "http://file/files/"
-  end
 end
