@@ -64,8 +64,20 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/publication-events/"
   end
 
-  match "/files/*path" do
+  get "/files/:id/download", @any do
+    forward conn, [], "http://file/files/" <> id <> "/download"
+  end
+
+  post "/files/*path", @any do
     forward conn, path, "http://file/files/"
+  end
+
+  delete "/files/*path", @any do
+    forward conn, path, "http://file/files/"
+  end
+
+  match "/files/*path", @json do
+    forward conn, path, "http://cache/files/"
   end
 
   match "_", %{ last_call: true } do
