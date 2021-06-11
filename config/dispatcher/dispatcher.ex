@@ -20,8 +20,16 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
+  match "/press-releases/*path", @json do
+    forward conn, path, "http://cache/press-releases/"
+  end
+
   get "/publication-channels/*path", @json do
     forward conn, path, "http://cache/publication-channels/"
+  end
+
+  match "/publication-events/*path", @json do
+    forward conn, path, "http://cache/publication-events/"
   end
 
   match "/contacts/*path", @json do
@@ -44,24 +52,12 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/organizations/"
   end
 
-  get "/contact-status/*path", @json do
-    forward conn, path, "http://cache/contact-status/"
+  get "/contact-statuses/*path", @json do
+    forward conn, path, "http://cache/contact-statuses/"
   end
 
   get "/themes/*path", @json do
     forward conn, path, "http://cache/themes/"
-  end
-
-  match "/press-releases/*path", @json do
-    forward conn, path, "http://cache/press-releases/"
-  end
-
-  match "/collaboration-activities/*path", @json do
-    forward conn, path, "http://cache/collaboration-activities/"
-  end
-
-  match "/publication-events/*path", @json do
-    forward conn, path, "http://cache/publication-events/"
   end
 
   get "/files/:id/download", @any do
