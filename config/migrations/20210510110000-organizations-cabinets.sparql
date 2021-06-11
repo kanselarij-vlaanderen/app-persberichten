@@ -1,4 +1,4 @@
-PREFIX vlorg: <https://data.vlaanderen.be/id/organisatie/>
+PREFIX vlorg: <http://themis.vlaanderen.be/id/organisatie/>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX org:  <http://www.w3.org/ns/org#>

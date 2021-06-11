@@ -1,4 +1,4 @@
-PREFIX vlpc: <https://data.vlaanderen.be/id/publicatiekanaal/>
+PREFIX vlpc: <http://themis.vlaanderen.be/id/publicatiekanaal/>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>
