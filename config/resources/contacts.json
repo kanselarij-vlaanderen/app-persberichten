@@ -1,0 +1,218 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "adms": "http://www.w3.org/ns/adms#",
+    "besluitvorming": "https://data.vlaanderen.be/ns/besluitvorming#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "ebucore": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "mu": "http://mu.semte.ch/vocabularies/core/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "nco": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#",
+    "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#",
+    "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
+    "org": "http://www.w3.org/ns/org#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "resources": {
+    "contacts": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact/",
+      "class": "ebucore:Contact",
+      "attributes": {
+        "full-name": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "given-name": {
+          "type": "string",
+          "predicate": "vcard:given-name"
+        },
+        "family-name": {
+          "type": "string",
+          "predicate": "vcard:family-name"
+        },
+        "role": {
+          "type": "string",
+          "predicate": "vcard:role"
+        },
+        "created": {
+          "type": "dateTime",
+          "predicate": "dct:created"
+        },
+        "modified": {
+          "type": "dateTime",
+          "predicate": "dct:modified"
+        }
+      },
+      "features": [
+        "include-uri"
+      ],
+      "relationships": {
+        "status": {
+          "predicate": "adms:status",
+          "target": "contact-statuses",
+          "cardinality": "one"
+        },
+        "mobile-phone": {
+          "predicate": "ext:hasMobile",
+          "_comment": "FIXME: subproperty of vcard:hasTelephone",
+          "target": "mobile-phones",
+          "cardinality": "one"
+        },
+        "telephone": {
+          "predicate": "vcard:hasTelephone",
+          "target": "telephones",
+          "cardinality": "one"
+        },
+        "mail-address": {
+          "predicate": "vcard:hasEmail",
+          "target": "mail-addresses",
+          "cardinality": "one"
+        },
+        "organization": {
+          "predicate": "org:hasMember",
+          "target": "organizations",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "press-releases": {
+          "predicate": "dct:source",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
+        }
+      }
+    },
+    "organizations": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/organizatie/",
+      "class": "vcard:Organization",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "identifier": {
+          "type": "string",
+          "predicate": "dct:identifier"
+        }
+      },
+      "relationships": {
+        "contacts": {
+          "predicate": "org:hasMember",
+          "target": "contacts",
+          "cardinality": "many"
+        },
+        "press-releases": {
+          "predicate": "dct:creator",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "mobile-phones": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/mobiele-telefoon/",
+      "class": "vcard:Cell",
+      "attributes": {
+        "value": {
+          "type": "url",
+          "predicate": "vcard:hasValue"
+        },
+        "publication-channels": {
+          "type": "uri-set",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "relationships": {
+        "contact": {
+          "predicate": "ext:hasMobile",
+          "_comment": "FIXME: subproperty of vcard:hasTelephone",
+          "target": "contacts",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "telephones": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/telefoon/",
+      "class": "vcard:Voice",
+      "attributes": {
+        "value": {
+          "type": "url",
+          "predicate": "vcard:hasValue"
+        },
+        "publication-channels": {
+          "type": "uri-set",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "relationships": {
+        "contact": {
+          "predicate": "vcard:hasTelephone",
+          "target": "contacts",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "mail-addresses": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/email-adres/",
+      "class": "vcard:Email",
+      "attributes": {
+        "value": {
+          "type": "url",
+          "predicate": "vcard:hasValue"
+        },
+        "publication-channels": {
+          "type": "uri-set",
+          "predicate": "ext:publicationChannel"
+        }
+      },
+      "relationships": {
+        "contact": {
+          "predicate": "vcard:hasEmail",
+          "target": "contacts",
+          "cardinality": "one",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "contact-statuses": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact-status/",
+      "class": "ext:ContactStatus",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "relationships": {
+        "contacts": {
+          "predicate": "adms:status",
+          "target": "contacts",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    }
+  }
+}

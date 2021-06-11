@@ -7,7 +7,7 @@
     "dbpedia": "http://dbpedia.org/ontology/"
   },
   "resources": {
-    "file": {
+    "files": {
       "new-resource-base": "http://themis.vlaanderen.be/id/bestand/",
       "class": "nfo:FileDataObject",
       "attributes": {
@@ -35,7 +35,7 @@
       "relationships": {
         "download": {
           "predicate": "nie:dataSource",
-          "target": "file",
+          "target": "files",
           "cardinality": "one",
           "inverse": true
         }
@@ -45,4 +45,4 @@
       ]
     }
   }
-},
+}

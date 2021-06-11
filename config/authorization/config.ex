@@ -23,11 +23,15 @@ defmodule Acl.UserGroups.Config do
           constraint: %ResourceConstraint{
             resource_types: [
               "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact",
+              "http://mu.semte.ch/vocabularies/ext/ContactStatus",
               "http://www.w3.org/2006/vcard/ns#Cell",
               "http://www.w3.org/2006/vcard/ns#Voice",
               "http://www.w3.org/2006/vcard/ns#Email",
+              "http://www.w3.org/2006/vcard/ns#Organization",
               "http://purl.org/spar/fabio/PressRelease",
-              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
+              "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent",
+              "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel",
+              "http://mu.semte.ch/vocabularies/ext/Thema",
               "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
             ]
           }

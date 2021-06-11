@@ -18,197 +18,6 @@
     "prov": "http://www.w3.org/ns/prov#"
   },
   "resources": {
-    "publication-channels": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/publicatiekanaal/",
-      "class": "ebucore:PublicationChannel",
-      "attributes": {
-        "publication-channel-name": {
-          "type": "string",
-          "predicate": "ebucore:publicationChannelName"
-        },
-        "uuid": {
-          "type": "string",
-          "predicate": "mu:uuid"
-        }
-      },
-      "relationships": {
-        "hasChannelPublicationEvent": {
-          "predicate": "ebucore:hasChannelPublicationEvent",
-          "target": "publication-events",
-          "cardinality": "many",
-          "inverse": false
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "contact-status": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/contact-status/",
-      "class": "ext:ContactStatus",
-      "attributes": {
-        "label": {
-          "type": "string",
-          "predicate": "skos:prefLabel"
-        },
-        "uuid": {
-          "type": "string",
-          "predicate": "mu:uuid"
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "contacts": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/contact/",
-      "class": "ebucore:Contact",
-      "attributes": {
-        "full-name": {
-          "type": "string",
-          "predicate": "vcard:fn"
-        },
-        "given-name": {
-          "type": "string",
-          "predicate": "vcard:given-name"
-        },
-        "family-name": {
-          "type": "string",
-          "predicate": "vcard:family-name"
-        },
-        "role": {
-          "type": "string",
-          "predicate": "vcard:role"
-        },
-        "modified": {
-          "type": "dateTime",
-          "predicate": "dct:modified"
-        },
-        "created": {
-          "type": "dateTime",
-          "predicate": "dct:created"
-        },
-        "contact-status": {
-          "type": "string",
-          "predicate": "adms:status"
-        }
-      },
-      "features": [
-        "include-uri"
-      ],
-      "relationships": {
-        "mobile-phone": {
-          "predicate": "ext:hasMobile",
-          "target": "mobile-phones",
-          "cardinality": "one",
-          "inverse": false
-        },
-        "telephone": {
-          "predicate": "ext:hasTelephone",
-          "target": "telephones",
-          "cardinality": "one",
-          "inverse": false
-        },
-        "mail-address": {
-          "predicate": "ext:hasEmail",
-          "target": "mail-addresses",
-          "cardinality": "one",
-          "inverse": false
-        },
-        "organization": {
-          "predicate": "vcard:organization",
-          "target": "organizations",
-          "cardinality": "many",
-          "inverse": true
-        }
-      }
-    },
-    "organizations": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/organizaties/",
-      "class": "vcard:Organization",
-      "attributes": {
-        "full-name": {
-          "type": "string",
-          "predicate": "vcard:fn"
-        },
-        "identifier": {
-          "type": "string",
-          "predicate": "dct:identifier"
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "mobile-phones": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/mobiele-telefoon/",
-      "class": "vcard:Cell",
-      "attributes": {
-        "has-value": {
-          "type": "uri",
-          "predicate": "vcard:hasValue"
-        },
-        "publication-channel": {
-          "type": "uri",
-          "predicate": "ext:publicationChannel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "telephones": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/telefoon/",
-      "class": "vcard:Voice",
-      "attributes": {
-        "has-value": {
-          "type": "uri",
-          "predicate": "vcard:hasValue"
-        },
-        "publication-channel": {
-          "type": "uri",
-          "predicate": "ext:publicationChannel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "mail-addresses": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/email-adres/",
-      "class": "vcard:Email",
-      "attributes": {
-        "has-value": {
-          "type": "uri",
-          "predicate": "vcard:hasValue"
-        },
-        "publication-channel": {
-          "type": "uri",
-          "predicate": "ext:publicationChannel"
-        }
-      },
-      "features": [
-        "include-uri"
-      ]
-    },
-    "publication-events": {
-      "new-resource-base": "http://themis.vlaanderen.be/publicatie-event/",
-      "class": "ebucore:PublicationEvent",
-      "attributes": {
-        "published-start-date-time": {
-          "type": "datetime",
-          "predicate": "ebucore:publishedStartDateTime"
-        },
-        "publication-start-date-time": {
-          "type": "datetime",
-          "predicate": "ebucore:publicationStartDateTime"
-        },
-        "publication-end-date-time": {
-          "type": "datetime",
-          "predicate": "ebucore:publicationEndDateTime"
-        }
-      }
-    },
     "press-releases": {
       "new-resource-base": "http://themis.vlaanderen.be/persbericht/",
       "class": "fabio:PressRelease",
@@ -225,6 +34,10 @@
           "type": "string",
           "predicate": "dct:abstract"
         },
+        "keyword": {
+          "type": "string-set",
+          "predicate": "nie:keyword"
+        },
         "created": {
           "type": "datetime",
           "predicate": "dct:created"
@@ -232,40 +45,88 @@
         "modified": {
           "type": "datetime",
           "predicate": "dct:modified"
-        },
-        "keyword": {
-          "type": "string",
-          "predicate": "nie:keyword"
-        },
-        "theme": {
-          "type": "Theme",
-          "predicate": "dcat:theme"
         }
       },
       "relationships": {
-        "is-scheduled-on": {
+        "themes": {
+          "predicate": "dcat:theme",
+          "target": "themes",
+          "cardinality": "many"
+        },
+        "publication-event": {
           "predicate": "ebucore:isScheduledOn",
           "target": "publication-events",
-          "cardinality": "one",
-          "inverse": false
+          "cardinality": "one"
+        },
+        "sources": {
+          "predicate": "dct:source",
+          "target": "contacts",
+          "cardinality": "many"
         },
         "creator": {
           "predicate": "dct:creator",
           "target": "organizations",
-          "cardinality": "one",
-          "inverse": false
+          "cardinality": "one"
         },
-        "used": {
-          "predicate": "prov:used",
-          "target": "collaboration-activities",
-          "cardinality": "one",
-          "inverse": false
+        "attachments": {
+          "predicate": "nie:hasPart",
+          "target": "files",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "publication-events": {
+      "new-resource-base": "http://themis.vlaanderen.be/publicatie-event/",
+      "class": "ebucore:PublicationEvent",
+      "attributes": {
+        "planned-start-date": {
+          "type": "datetime",
+          "predicate": "ebucore:publishedStartDateTime"
         },
-        "generated": {
-          "predicate": "prov:generated",
-          "target": "collaboration-activities",
+        "started": {
+          "type": "datetime",
+          "predicate": "ebucore:publicationStartDateTime"
+        },
+        "ended": {
+          "type": "datetime",
+          "predicate": "ebucore:publicationEndDateTime"
+        }
+      },
+      "relationships": {
+        "publication-channels": {
+          "predicate": "ebucore:hasChannelPublicationEvent",
+          "target": "publication-channels",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "press-release": {
+          "predicate": "ebucore:isScheduledOn",
+          "target": "press-releases",
           "cardinality": "one",
-          "inverse": false
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "publication-channels": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/publicatiekanaal/",
+      "class": "ebucore:PublicationChannel",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "ebucore:publicationChannelName"
+        }
+      },
+      "relationships": {
+        "publication-events": {
+          "predicate": "ebucore:hasChannelPublicationEvent",
+          "target": "publication-events",
+          "cardinality": "many"
         }
       },
       "features": [
@@ -274,30 +135,16 @@
     },
     "themes": {
       "new-resource-base": "http://themis.vlaanderen.be/id/concept/thema/",
-      "class": "dcat:theme",
+      "class": "ext:Thema",
       "attributes": {
         "label": {
           "type": "string",
           "predicate": "skos:prefLabel"
-        },
-        "uuid": {
-          "type": "string",
-          "predicate": "mu:uuid"
         }
       },
       "features": [
         "include-uri"
       ]
-    },
-    "collaboration-activities": {
-      "new-resource-base": "http://themis.vlaanderen.be/collaboration-activity/",
-      "class": "ext:CollaborationActivity",
-      "attributes": {
-        "started-at-time": {
-          "type": "datetime",
-          "predicate": "prov:startedAtTime"
-        }
-      }
     }
   }
 }
