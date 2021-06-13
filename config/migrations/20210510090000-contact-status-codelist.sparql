@@ -17,7 +17,7 @@ INSERT DATA {
     skos:inScheme thConceptScheme:50ccb6d3-feee-490d-b966-ef34318d36b1 .
 
     vlcs:f09ad084-8dcb-47de-b24a-d36c29a910bd a skos:Concept, ext:ContactStatus ;
-    skos:prefLabel "inactief" ;
+    skos:prefLabel "niet actief" ;
     mu:uuid "f09ad084-8dcb-47de-b24a-d36c29a910bd" ;
     skos:inScheme thConceptScheme:50ccb6d3-feee-490d-b966-ef34318d36b1 .
   }
