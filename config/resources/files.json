@@ -38,6 +38,12 @@
           "target": "files",
           "cardinality": "one",
           "inverse": true
+        },
+        "press-release": {
+          "predicate": "nie:hasPart",
+          "target": "press-releases",
+          "cardinality": "one",
+          "inverse": true
         }
       },
       "features": [

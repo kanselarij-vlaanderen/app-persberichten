@@ -28,7 +28,7 @@
         },
         "html-content": {
           "type": "string",
-          "predicate": "nie:title"
+          "predicate": "nie:htmlContent"
         },
         "abstract": {
           "type": "string",
@@ -72,6 +72,12 @@
           "predicate": "nie:hasPart",
           "target": "files",
           "cardinality": "many"
+        },
+        "collaboration": {
+          "predicate": "prov:used",
+          "target": "collaboration-activities",
+          "cardinality": "one",
+          "inverse": true
         }
       },
       "features": [
@@ -140,6 +146,36 @@
         "label": {
           "type": "string",
           "predicate": "skos:prefLabel"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "collaboration-activities": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/samenwerkingsactiviteit/",
+      "class": "ext:CollaborationActivity",
+      "attributes": {
+        "start-date": {
+          "type": "datetime",
+          "predicate": "prov:startedAtTime"
+        }
+      },
+      "relationships": {
+        "editor": {
+          "predicate": "ext:currentEditor",
+          "target": "organizations",
+          "cardinality": "one"
+        },
+        "collaborators": {
+          "predicate": "prov:wasAssociatedWith",
+          "target": "organizations",
+          "cardinality": "many"
+        },
+        "press-release": {
+          "predicate": "prov:used",
+          "target": "press-releases",
+          "cardinality": "one"
         }
       },
       "features": [
