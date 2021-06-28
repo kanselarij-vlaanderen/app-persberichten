@@ -64,6 +64,18 @@ defmodule Dispatcher do
     forward conn, path, "http://mock-login/sessions/"
   end
 
+  get "/users/*path", @json do
+    forward conn, path, "http://cache/users/"
+  end
+
+  get "/accounts/*path", @json do
+    forward conn, path, "http://cache/accounts/"
+  end
+
+  get "/user-groups/*path", @json do
+    forward conn, path, "http://cache/user-groups/"
+  end
+
   get "/files/:id/download", @any do
     forward conn, [], "http://file/files/" <> id <> "/download"
   end

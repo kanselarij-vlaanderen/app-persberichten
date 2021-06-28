@@ -33,7 +33,10 @@ defmodule Acl.UserGroups.Config do
               "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel",
               "http://mu.semte.ch/vocabularies/ext/Thema",
               "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity"
+              "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
+              "http://xmlns.com/foaf/0.1/Person",
+              "http://xmlns.com/foaf/0.1/OnlineAccount",
+              "http://xmlns.com/foaf/0.1/Group"
             ]
           }
         }]
