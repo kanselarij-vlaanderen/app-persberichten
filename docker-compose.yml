@@ -54,6 +54,10 @@ services:
       - ./config/migrations:/data/migrations
     restart: always
     logging: *default-logging
+  mock-login:
+    image: kanselarij/mock-login-service:1.0.0
+    restart: always
+    logging: *default-logging
   cache:
     image: semtech/mu-cache:2.0.2
     links:
