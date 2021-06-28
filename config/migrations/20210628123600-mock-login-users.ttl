@@ -1,0 +1,145 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix vlorg: <http://themis.vlaanderen.be/id/organisatie/> .
+
+<http://themis.vlaanderen.be/id/gebruiker/ec8b05b7-c0ed-4f93-b8de-a46bc51dbf05> a foaf:Person ;
+    mu:uuid "ec8b05b7-c0ed-4f93-b8de-a46bc51dbf05" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Jambon" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/91f05002-80d0-420d-9908-ba8ba1ee7af8> .
+
+<http://themis.vlaanderen.be/id/account/91f05002-80d0-420d-9908-ba8ba1ee7af8> a foaf:OnlineAccount ;
+    mu:uuid "91f05002-80d0-420d-9908-ba8ba1ee7af8" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:bd76aa64-4295-411b-4cbc-9fd1a0d0ad8f a foaf:Group ;
+    foaf:name "Kabinet Jambon" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/ec8b05b7-c0ed-4f93-b8de-a46bc51dbf05> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> a foaf:Person ;
+    mu:uuid "7022c9db-0a28-4bdf-9fc1-afe7f389ea4d" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Crevits" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/24d0fa70-5bfc-435c-a84b-6191f023dcd0> .
+
+<http://themis.vlaanderen.be/id/account/24d0fa70-5bfc-435c-a84b-6191f023dcd0> a foaf:OnlineAccount ;
+    mu:uuid "24d0fa70-5bfc-435c-a84b-6191f023dcd0" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:25cd0094-0f57-32fd-4131-a6c0e604c258 a foaf:Group ;
+    foaf:name "Kabinet Crevits" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/43f679a1-a3a8-4a17-b00e-fae451696ec5> a foaf:Person ;
+    mu:uuid "43f679a1-a3a8-4a17-b00e-fae451696ec5" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Somers" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/3e9ad84c-ecbb-41b9-8b84-28925f72990d> .
+
+<http://themis.vlaanderen.be/id/account/3e9ad84c-ecbb-41b9-8b84-28925f72990d> a foaf:OnlineAccount ;
+    mu:uuid "3e9ad84c-ecbb-41b9-8b84-28925f72990d" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:cae0b56b-b092-0d0f-6e48-2121e0ce4873 a foaf:Group ;
+    foaf:name "Kabinet Somers" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/43f679a1-a3a8-4a17-b00e-fae451696ec5> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/9975816b-755b-4b60-b2d2-144cedc04466> a foaf:Person ;
+    mu:uuid "9975816b-755b-4b60-b2d2-144cedc04466" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Weyts" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/196ad9c2-605e-4466-88e2-aa6ab4d60264> .
+
+<http://themis.vlaanderen.be/id/account/196ad9c2-605e-4466-88e2-aa6ab4d60264> a foaf:OnlineAccount ;
+    mu:uuid "196ad9c2-605e-4466-88e2-aa6ab4d60264" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:4b83f52b-1b70-1e9f-1157-dffdd4a6015f a foaf:Group ;
+    foaf:name "Kabinet Weyts" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/9975816b-755b-4b60-b2d2-144cedc04466> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/965a8576-16f5-4eab-9d2e-6fefa35712c0> a foaf:Person ;
+    mu:uuid "965a8576-16f5-4eab-9d2e-6fefa35712c0" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Demir" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/367e5d05-2e23-46dc-84fc-2599b4cfebf2> .
+
+<http://themis.vlaanderen.be/id/account/367e5d05-2e23-46dc-84fc-2599b4cfebf2> a foaf:OnlineAccount ;
+    mu:uuid "367e5d05-2e23-46dc-84fc-2599b4cfebf2" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:289c52d8-4891-e110-cd80-c32f6e12d74d a foaf:Group ;
+    foaf:name "Kabinet Demir" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/965a8576-16f5-4eab-9d2e-6fefa35712c0> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> a foaf:Person ;
+    mu:uuid "72f9d832-7003-4398-b0a3-ab3e47eb2da4" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Beke" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/73635c29-7173-4722-b57b-f28cd1d549bd> .
+
+<http://themis.vlaanderen.be/id/account/73635c29-7173-4722-b57b-f28cd1d549bd> a foaf:OnlineAccount ;
+    mu:uuid "73635c29-7173-4722-b57b-f28cd1d549bd" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:939c6810-34a3-0d9d-e5f1-85e22172dd16 a foaf:Group ;
+    foaf:name "Kabinet Beke" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/7b407bd5-0b74-4cc9-af5e-4082d13bacfa> a foaf:Person ;
+    mu:uuid "7b407bd5-0b74-4cc9-af5e-4082d13bacfa" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Diependaele" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/30af6a26-c36e-4a6e-8891-ad10bc3b5504> .
+
+<http://themis.vlaanderen.be/id/account/30af6a26-c36e-4a6e-8891-ad10bc3b5504> a foaf:OnlineAccount ;
+    mu:uuid "30af6a26-c36e-4a6e-8891-ad10bc3b5504" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:aaa91356-1201-a0b1-5ad5-a2e9689a9d21 a foaf:Group ;
+    foaf:name "Kabinet Diependaele" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/7b407bd5-0b74-4cc9-af5e-4082d13bacfa> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/8ebd1ba3-d6ec-4f2d-b2ca-461e78924529> a foaf:Person ;
+    mu:uuid "8ebd1ba3-d6ec-4f2d-b2ca-461e78924529" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Peeters" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/2897c05d-44ab-4419-bef3-9b44d7c44af7> .
+
+<http://themis.vlaanderen.be/id/account/2897c05d-44ab-4419-bef3-9b44d7c44af7> a foaf:OnlineAccount ;
+    mu:uuid "2897c05d-44ab-4419-bef3-9b44d7c44af7" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:ec081548-4a0a-ac53-2be3-a9e39d903f1d a foaf:Group ;
+    foaf:name "Kabinet Peeters" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/8ebd1ba3-d6ec-4f2d-b2ca-461e78924529> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/26581692-16e3-4627-9872-23f45891cbe4> a foaf:Person ;
+    mu:uuid "26581692-16e3-4627-9872-23f45891cbe4" ;
+    foaf:firstName "Kabinet" ;
+    foaf:familyName "Dalle" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/ad53f6d3-581c-4e92-8d15-a2780c5a6ce8> .
+
+<http://themis.vlaanderen.be/id/account/ad53f6d3-581c-4e92-8d15-a2780c5a6ce8> a foaf:OnlineAccount ;
+    mu:uuid "ad53f6d3-581c-4e92-8d15-a2780c5a6ce8" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+vlorg:e590a821-6c9f-b836-c0fe-91999bfcddab a foaf:Group ;
+    foaf:name "Kabinet Dalle" ;
+    foaf:member <http://themis.vlaanderen.be/id/gebruiker/26581692-16e3-4627-9872-23f45891cbe4> .
