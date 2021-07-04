@@ -53,6 +53,11 @@
           "target": "themes",
           "cardinality": "many"
         },
+        "publication-channels": {
+          "predicate": "ext:publicationChannels",
+          "target": "publication-channels",
+          "cardinality": "many"
+        },
         "publication-event": {
           "predicate": "ebucore:isScheduledOn",
           "target": "publication-events",
@@ -129,6 +134,12 @@
         }
       },
       "relationships": {
+        "press-releases": {
+          "predicate": "ext:publicationChannels",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
+        },
         "publication-events": {
           "predicate": "ebucore:hasChannelPublicationEvent",
           "target": "publication-events",
