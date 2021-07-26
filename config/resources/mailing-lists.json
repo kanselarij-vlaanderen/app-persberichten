@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "prefixes": {},
+  "resources": {
+    "contact-list": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact-lijst/",
+      "class": "nco:ContactList",
+      "attributes": {}
+    },
+    "contact-item": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/contact-item/",
+      "class": "nco:Contact",
+      "attributes": {}
+    }
+  }
+}
