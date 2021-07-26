@@ -16,3 +16,4 @@
 (read-domain-file "contacts.json")
 (read-domain-file "files.json")
 (read-domain-file "users.json")
+(read-domain-file "mailing-lists.json")

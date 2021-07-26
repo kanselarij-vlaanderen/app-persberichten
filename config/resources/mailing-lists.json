@@ -1,16 +1,55 @@
 {
   "version": "0.1",
-  "prefixes": {},
+  "prefixes": {
+    "nco": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#"
+  },
   "resources": {
     "contact-list": {
       "new-resource-base": "http://themis.vlaanderen.be/id/contact-lijst/",
       "class": "nco:ContactList",
-      "attributes": {}
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        }
+      },
+      "relationships": {
+        "containsContact": {
+          "predicate": "nco:containsContact",
+          "target": "contact-item",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
     },
     "contact-item": {
       "new-resource-base": "http://themis.vlaanderen.be/id/contact-item/",
       "class": "nco:Contact",
-      "attributes": {}
+      "attributes": {
+        "fn": {
+          "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "given-name": {
+          "type": "string",
+          "predicate": "vcard:given-name"
+        },
+        "family-name": {
+          "type": "string",
+          "predicate": "vcard:family-name"
+        },
+        "organization-name": {
+          "type": "string",
+          "predicate": "vcard:organization-name"
+        }
+      },
+      "relationships": {},
+      "features": [
+        "include-uri"
+      ]
     }
   }
 }

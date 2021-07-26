@@ -92,6 +92,14 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/files/"
   end
 
+  match "/contact-lists/*path", @json do
+    forward conn, path, "http://cache/contact-lists/"
+  end
+
+  match "/contact-items/*path", @json do
+    forward conn, path, "http://cache/contact-items/"
+  end
+
   match "_", %{ last_call: true } do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
