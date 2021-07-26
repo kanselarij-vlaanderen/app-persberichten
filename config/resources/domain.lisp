@@ -13,6 +13,7 @@
 (defparameter *max-group-sorted-properties* t)
 
 (read-domain-file "press-releases.json")
+(read-domain-file "government.json")
 (read-domain-file "contacts.json")
 (read-domain-file "files.json")
 (read-domain-file "users.json")
