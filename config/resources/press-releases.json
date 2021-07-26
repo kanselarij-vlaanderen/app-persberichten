@@ -88,7 +88,7 @@
         "government-fields": {
           "predicate": "besluitvorming:beleidsveld",
           "target": "government-fields",
-          "cardinality": "one",
+          "cardinality": "many",
           "inverse": false
         }
       },
