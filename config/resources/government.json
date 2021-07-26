@@ -1,0 +1,44 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "kans": "http://kanselarij.vo.data.gift/core/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/"
+  },
+  "resources": {
+    "government-fields": {
+      "new-resource-base": "http://themis.vlaanderen.be/beleidsveld/",
+      "class": "kans:Beleidsveld",
+      "attributes": {
+        "prefLabel": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "relationships": {
+        "hasGovernmentDomain": {
+          "predicate": "ext:heeftBeleidsDomein",
+          "target": "government-domain",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "government-domains": {
+      "new-resource-base": "http://themis.vlaanderen.be/beleidsdomein/",
+      "class": "kans:Beleidsdomein",
+      "attributes": {
+        "prefLabel": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "relationships": {},
+      "features": [
+        "include-uri"
+      ]
+    }
+  }
+}
