@@ -78,3 +78,13 @@ services:
       - ./data/files:/share
     restart: always
     logging: *default-logging
+  publicationTasksGenerator:
+    image: semtech/mu-javascript-template
+    ports:
+      - 8888:80
+    environment:
+      NODE_ENV: "development"
+    links:
+      - triplestore:database
+    volumes:
+      - ./config/publication-tasks-generator:/app/
