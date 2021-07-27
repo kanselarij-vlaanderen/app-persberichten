@@ -15,8 +15,7 @@
     "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
-    "prov": "http://www.w3.org/ns/prov#",
-    "kans": "http://kanselarij.vo.data.gift/core/"
+    "prov": "http://www.w3.org/ns/prov#"
   },
   "resources": {
     "press-releases": {
@@ -88,8 +87,7 @@
         "government-fields": {
           "predicate": "besluitvorming:beleidsveld",
           "target": "government-fields",
-          "cardinality": "many",
-          "inverse": false
+          "cardinality": "many"
         }
       },
       "features": [

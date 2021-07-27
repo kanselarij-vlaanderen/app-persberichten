@@ -3,22 +3,23 @@
   "prefixes": {
     "kans": "http://kanselarij.vo.data.gift/core/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
-    "ext": "http://mu.semte.ch/vocabularies/ext/"
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "fabio": "http://purl.org/spar/fabio/"
   },
   "resources": {
     "government-fields": {
-      "new-resource-base": "http://themis.vlaanderen.be/beleidsveld/",
+      "new-resource-base": "http://themis.vlaanderen.be/id/beleidsveld/",
       "class": "kans:Beleidsveld",
       "attributes": {
-        "prefLabel": {
+        "pref-label": {
           "type": "string",
           "predicate": "skos:prefLabel"
         }
       },
       "relationships": {
-        "hasGovernmentDomain": {
+        "government-domain": {
           "predicate": "ext:heeftBeleidsDomein",
-          "target": "government-domain",
+          "target": "government-domains",
           "cardinality": "one"
         }
       },
@@ -27,7 +28,7 @@
       ]
     },
     "government-domains": {
-      "new-resource-base": "http://themis.vlaanderen.be/beleidsdomein/",
+      "new-resource-base": "http://themis.vlaanderen.be/id/beleidsdomein/",
       "class": "kans:Beleidsdomein",
       "attributes": {
         "prefLabel": {
@@ -35,7 +36,20 @@
           "predicate": "skos:prefLabel"
         }
       },
-      "relationships": {},
+      "relationships": {
+        "government-field": {
+          "predicate": "kans:Beleidsveld",
+          "target": "government-fields",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "press-release": {
+          "predicate": "fabio:PressRelease",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
       "features": [
         "include-uri"
       ]
