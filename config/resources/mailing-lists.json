@@ -15,7 +15,7 @@
         }
       },
       "relationships": {
-        "containsContact": {
+        "contact-items": {
           "predicate": "nco:containsContact",
           "target": "contact-item",
           "cardinality": "many"
@@ -29,7 +29,7 @@
       "new-resource-base": "http://themis.vlaanderen.be/id/contact-item/",
       "class": "nco:Contact",
       "attributes": {
-        "fn": {
+        "full-name": {
           "type": "string",
           "predicate": "vcard:fn"
         },
@@ -46,7 +46,14 @@
           "predicate": "vcard:organization-name"
         }
       },
-      "relationships": {},
+      "relationships": {
+        "contact-lists": {
+          "predicate": "nco:ContactList",
+          "target": "contact-list",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
       "features": [
         "include-uri"
       ]
