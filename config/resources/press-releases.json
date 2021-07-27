@@ -83,6 +83,11 @@
           "target": "collaboration-activities",
           "cardinality": "one",
           "inverse": true
+        },
+        "government-fields": {
+          "predicate": "besluitvorming:beleidsveld",
+          "target": "government-fields",
+          "cardinality": "many"
         }
       },
       "features": [
