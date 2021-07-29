@@ -24,7 +24,7 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/press-releases/"
   end
 
-  get "/publication-channels/*path", @json do
+  match "/publication-channels/*path", @json do
     forward conn, path, "http://cache/publication-channels/"
   end
 
