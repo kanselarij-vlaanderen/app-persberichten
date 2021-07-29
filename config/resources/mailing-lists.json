@@ -5,7 +5,7 @@
     "vcard": "http://www.w3.org/2006/vcard/ns#"
   },
   "resources": {
-    "contact-list": {
+    "contact-lists": {
       "new-resource-base": "http://themis.vlaanderen.be/id/contact-lijst/",
       "class": "nco:ContactList",
       "attributes": {
@@ -17,7 +17,7 @@
       "relationships": {
         "contact-items": {
           "predicate": "nco:containsContact",
-          "target": "contact-item",
+          "target": "contact-items",
           "cardinality": "many"
         }
       },
@@ -25,7 +25,7 @@
         "include-uri"
       ]
     },
-    "contact-item": {
+    "contact-items": {
       "new-resource-base": "http://themis.vlaanderen.be/id/contact-item/",
       "class": "nco:Contact",
       "attributes": {
@@ -49,8 +49,20 @@
       "relationships": {
         "contact-lists": {
           "predicate": "nco:ContactList",
-          "target": "contact-list",
+          "target": "contact-lists",
           "cardinality": "many",
+          "inverse": true
+        },
+        "telephone": {
+          "predicate": "vcard:hasTelephone",
+          "target": "telephones",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "mail-address": {
+          "predicate": "vcard:hasEmail",
+          "target": "mail-addresses",
+          "cardinality": "one",
           "inverse": true
         }
       },
