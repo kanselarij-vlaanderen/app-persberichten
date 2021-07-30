@@ -1,0 +1,58 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "kans": "http://kanselarij.vo.data.gift/core/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "fabio": "http://purl.org/spar/fabio/"
+  },
+  "resources": {
+    "government-fields": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/beleidsveld/",
+      "class": "kans:Beleidsveld",
+      "attributes": {
+        "pref-label": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "relationships": {
+        "government-domain": {
+          "predicate": "ext:heeftBeleidsDomein",
+          "target": "government-domains",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "government-domains": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/beleidsdomein/",
+      "class": "kans:Beleidsdomein",
+      "attributes": {
+        "prefLabel": {
+          "type": "string",
+          "predicate": "skos:prefLabel"
+        }
+      },
+      "relationships": {
+        "government-field": {
+          "predicate": "kans:Beleidsveld",
+          "target": "government-fields",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "press-release": {
+          "predicate": "fabio:PressRelease",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    }
+  }
+}
