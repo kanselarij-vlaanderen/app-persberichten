@@ -206,9 +206,9 @@
           "cardinality": "one",
           "inverse": true
         },
-        "contact-list": {
+        "contact-item": {
           "predicate": "vcard:hasEmail",
-          "target": "contact-lists",
+          "target": "contact-items",
           "cardinality": "one",
           "inverse": true
         }

@@ -19,16 +19,6 @@
           "predicate": "nco:containsContact",
           "target": "contact-items",
           "cardinality": "many"
-        },
-        "telephone": {
-          "predicate": "vcard:hasTelephone",
-          "target": "telephones",
-          "cardinality": "one"
-        },
-        "mail-address": {
-          "predicate": "vcard:hasEmail",
-          "target": "mail-addresses",
-          "cardinality": "one"
         }
       },
       "features": [
@@ -62,6 +52,16 @@
           "target": "contact-lists",
           "cardinality": "many",
           "inverse": true
+        },
+        "telephone": {
+          "predicate": "vcard:hasTelephone",
+          "target": "telephones",
+          "cardinality": "one"
+        },
+        "mail-address": {
+          "predicate": "vcard:hasEmail",
+          "target": "mail-addresses",
+          "cardinality": "one"
         }
       },
       "features": [
