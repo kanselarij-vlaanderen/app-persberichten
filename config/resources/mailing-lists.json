@@ -47,7 +47,7 @@
         }
       },
       "relationships": {
-        "contact-lists": {
+        "contact-list": {
           "predicate": "nco:ContactList",
           "target": "contact-lists",
           "cardinality": "one",
