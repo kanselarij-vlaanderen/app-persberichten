@@ -176,7 +176,7 @@
           "inverse": true
         },
         "contact-item": {
-          "predicate": "vcard:hasEmail",
+          "predicate": "vcard:hasTelephone",
           "target": "contact-items",
           "cardinality": "one",
           "inverse": true
