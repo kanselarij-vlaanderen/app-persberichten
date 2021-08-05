@@ -100,6 +100,14 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/files/"
   end
 
+  match "/contact-lists/*path", @json do
+    forward conn, path, "http://cache/contact-lists/"
+  end
+
+  match "/contact-items/*path", @json do
+    forward conn, path, "http://cache/contact-items/"
+  end
+
   get "/government-domains/*path", @json do
     forward conn, path, "http://cache/government-domains/"
   end
