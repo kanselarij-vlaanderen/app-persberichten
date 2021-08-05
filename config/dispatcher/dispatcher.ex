@@ -2,13 +2,21 @@ defmodule Dispatcher do
   use Matcher
 
   define_accept_types [
-    html: [ "text/html", "application/xhtml+html" ],
-    json: [ "application/json", "application/vnd.api+json" ],
+    html: ["text/html", "application/xhtml+html"],
+    json: ["application/json", "application/vnd.api+json"],
   ]
 
   @any %{}
-  @json %{ accept: %{ json: true } }
-  @html %{ accept: %{ html: true } }
+  @json %{
+    accept: %{
+      json: true
+    }
+  }
+  @html %{
+    accept: %{
+      html: true
+    }
+  }
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
@@ -24,7 +32,7 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/press-releases/"
   end
 
-  get "/publication-channels/*path", @json do
+  match "/publication-channels/*path", @json do
     forward conn, path, "http://cache/publication-channels/"
   end
 
@@ -100,8 +108,16 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/contact-items/"
   end
 
-  match "_", %{ last_call: true } do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  get "/government-domains/*path", @json do
+    forward conn, path, "http://cache/government-domains/"
+  end
+
+  get "/government-fields/*path", @json do
+    forward conn, path, "http://cache/government-fields/"
+  end
+
+  match "_", %{last_call: true} do
+    send_resp(conn, 404, "Route not found.  See config/dispatcher.ex")
   end
 
 end

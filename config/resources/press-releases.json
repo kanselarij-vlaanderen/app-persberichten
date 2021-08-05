@@ -83,6 +83,11 @@
           "target": "collaboration-activities",
           "cardinality": "one",
           "inverse": true
+        },
+        "government-fields": {
+          "predicate": "besluitvorming:beleidsveld",
+          "target": "government-fields",
+          "cardinality": "many"
         }
       },
       "features": [
@@ -110,8 +115,7 @@
         "publication-channels": {
           "predicate": "ebucore:hasChannelPublicationEvent",
           "target": "publication-channels",
-          "cardinality": "many",
-          "inverse": true
+          "cardinality": "many"
         },
         "press-release": {
           "predicate": "ebucore:isScheduledOn",
@@ -143,7 +147,8 @@
         "publication-events": {
           "predicate": "ebucore:hasChannelPublicationEvent",
           "target": "publication-events",
-          "cardinality": "many"
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [

@@ -27,7 +27,9 @@ defmodule Acl.UserGroups.Config do
       "http://mu.semte.ch/vocabularies/ext/ContactStatus",
       "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel",
       "http://mu.semte.ch/vocabularies/ext/Thema",
-      "http://www.w3.org/2006/vcard/ns#Organization"
+      "http://www.w3.org/2006/vcard/ns#Organization",
+      "http://kanselarij.vo.data.gift/core/Beleidsveld",
+      "http://kanselarij.vo.data.gift/core/Beleidsdomein",
     ]
   end
 
