@@ -9,5 +9,5 @@ A supplementary `docker-compose.development.yml`-file is provided in order to tw
 You can start the stack in development mode by running
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.development.yml up
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 ```
