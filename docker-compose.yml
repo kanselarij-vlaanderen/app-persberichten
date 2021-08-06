@@ -79,12 +79,10 @@ services:
     restart: always
     logging: *default-logging
   publicationTasksGenerator:
-    image: semtech/mu-javascript-template
+    image: kanselarij/press-releases-publication-tasks-generator-service
     ports:
       - 8888:80
-    environment:
-      NODE_ENV: "development"
     links:
       - triplestore:database
-    volumes:
-      - ./config/publication-tasks-generator:/app/
+    restart: always
+    logging: *default-logging
