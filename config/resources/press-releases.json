@@ -34,7 +34,7 @@
           "type": "string",
           "predicate": "dct:abstract"
         },
-        "keyword": {
+        "keywords": {
           "type": "string-set",
           "predicate": "nie:keyword"
         },
