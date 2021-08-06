@@ -78,9 +78,7 @@ services:
       - ./data/files:/share
     restart: always
     logging: *default-logging
-  publicationTasksGenerator:
-    image: kanselarij/press-releases-publication-tasks-generator-service:latest
-    links:
-      - triplestore:database
+  publication-tasks-generator:
+    image: kanselarij/press-releases-publication-tasks-generator-service:0.1.0
     restart: always
     logging: *default-logging
