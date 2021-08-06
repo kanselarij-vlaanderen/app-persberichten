@@ -115,7 +115,8 @@
         "publication-channels": {
           "predicate": "ebucore:hasChannelPublicationEvent",
           "target": "publication-channels",
-          "cardinality": "many"
+          "cardinality": "many",
+          "inverse": true
         },
         "press-release": {
           "predicate": "ebucore:isScheduledOn",
@@ -147,8 +148,7 @@
         "publication-events": {
           "predicate": "ebucore:hasChannelPublicationEvent",
           "target": "publication-events",
-          "cardinality": "many",
-          "inverse": true
+          "cardinality": "many"
         }
       },
       "features": [
