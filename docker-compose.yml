@@ -79,9 +79,7 @@ services:
     restart: always
     logging: *default-logging
   publicationTasksGenerator:
-    image: kanselarij/press-releases-publication-tasks-generator-service
-    ports:
-      - 8888:80
+    image: kanselarij/press-releases-publication-tasks-generator-service:latest
     links:
       - triplestore:database
     restart: always
