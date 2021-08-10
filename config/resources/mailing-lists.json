@@ -19,6 +19,11 @@
           "predicate": "nco:containsContact",
           "target": "contact-items",
           "cardinality": "many"
+        },
+        "publication-events": {
+          "predicate": "ext:contactListHasChannelPublicationEvent",
+          "target": "publication-events",
+          "cardinality": "many"
         }
       },
       "features": [
@@ -62,6 +67,11 @@
           "predicate": "vcard:hasEmail",
           "target": "mail-addresses",
           "cardinality": "one"
+        },
+        "publication-events": {
+          "predicate": "ext:contactHasChannelPublicationEvent",
+          "target": "publication-events",
+          "cardinality": "many"
         }
       },
       "features": [

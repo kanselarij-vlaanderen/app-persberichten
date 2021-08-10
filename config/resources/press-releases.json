@@ -123,6 +123,18 @@
           "target": "press-releases",
           "cardinality": "one",
           "inverse": true
+        },
+        "contact-lists": {
+          "predicate": "ext:contactListHasChannelPublicationEvent",
+          "target": "contact-lists",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "contact-items": {
+          "predicate": "ext:contactHasChannelPublicationEvent",
+          "target": "contact-items",
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
