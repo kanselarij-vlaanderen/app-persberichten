@@ -24,6 +24,12 @@
           "predicate": "ext:contactListHasChannelPublicationEvent",
           "target": "publication-events",
           "cardinality": "many"
+        },
+        "press-releases": {
+          "predicate": "ext:contactLists",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
@@ -72,6 +78,12 @@
           "predicate": "ext:contactHasChannelPublicationEvent",
           "target": "publication-events",
           "cardinality": "many"
+        },
+        "press-releases": {
+          "predicate": "ext:contacts",
+          "target": "press-releases",
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [

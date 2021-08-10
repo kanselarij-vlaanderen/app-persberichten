@@ -88,6 +88,16 @@
           "predicate": "besluitvorming:beleidsveld",
           "target": "government-fields",
           "cardinality": "many"
+        },
+        "contact-items": {
+          "predicate": "ext:contacts",
+          "target": "contact-items",
+          "cardinality": "many"
+        },
+        "contact-lists": {
+          "predicate": "ext:contactLists",
+          "target": "contact-lists",
+          "cardinality": "many"
         }
       },
       "features": [
