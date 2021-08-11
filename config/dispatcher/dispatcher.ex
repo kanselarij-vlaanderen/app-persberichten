@@ -116,7 +116,7 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/government-fields/"
   end
 
-  get "/csv/:id/parse", @any do
+  get "/csv/:id/parse", @json do
     forward conn, [], "http://csv-file-parser/csv/" <> id <> "/parse"
   end
 
