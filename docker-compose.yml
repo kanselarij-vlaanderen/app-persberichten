@@ -82,3 +82,9 @@ services:
     image: kanselarij/press-releases-publication-tasks-generator-service:0.1.0
     restart: always
     logging: *default-logging
+  csv-file-parser:
+    image: kanselarij/csv-parser-service:0.1.0
+    restart: always
+    logging: *default-logging
+    volumes:
+      - ./data/files:/share
