@@ -23,3 +23,5 @@ services:
     restart: "no"
   file:
     restart: "no"
+  mail-delivery:
+    restart: "no"

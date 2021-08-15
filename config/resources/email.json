@@ -1,0 +1,114 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "nmo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#",
+    "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
+    "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#"
+  },
+  "resources": {
+    "mail-folders": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/mail-folders/",
+      "class": "nfo:Folder",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "predicate": "nie:title"
+        },
+        "description": {
+          "type": "string",
+          "predicate": "nie:description"
+        }
+      },
+      "relationships": {
+        "emails": {
+          "predicate": "nmo:isPartOf",
+          "target": "emails",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "folders": {
+          "predicate": "email:hasFolder",
+          "target": "mail-folders",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "emails": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/emails/",
+      "class": "nmo:Email",
+      "attributes": {
+        "message-id": {
+          "type": "string",
+          "predicate": "nmo:messageId"
+        },
+        "from": {
+          "type": "string",
+          "predicate": "nmo:messageFrom"
+        },
+        "to": {
+          "type": "string",
+          "predicate": "nmo:emailTo"
+        },
+        "cc": {
+          "type": "string",
+          "predicate": "nmo:emailCc"
+        },
+        "bcc": {
+          "type": "string",
+          "predicate": "nmo:emailBcc"
+        },
+        "subject": {
+          "type": "string",
+          "predicate": "nmo:messageSubject"
+        },
+        "content": {
+          "type": "string",
+          "predicate": "nmo:plainTextMessageContent"
+        },
+        "html-content": {
+          "type": "string",
+          "predicate": "nmo:htmlMessageContent"
+        },
+        "is-read": {
+          "type": "boolean",
+          "predicate": "nmo:isRead"
+        },
+        "content-mime-type": {
+          "type": "string",
+          "predicate": "nmo:contentMimeType"
+        },
+        "received-date": {
+          "type": "datetime",
+          "predicate": "nmo:receivedDate"
+        },
+        "sent-date": {
+          "type": "datetime",
+          "predicate": "nmo:sentDate"
+        }
+      },
+      "relationships": {
+        "in-reply-to": {
+          "predicate": "nmo:inReplyTo",
+          "target": "emails",
+          "cardinality": "one"
+        },
+        "folder": {
+          "predicate": "nmo:isPartOf",
+          "target": "mail-folders",
+          "cardinality": "one"
+        },
+        "attachments": {
+          "predicate": "nmo:hasAttachment",
+          "target": "files",
+          "cardinality": "many"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    }
+  }
+}

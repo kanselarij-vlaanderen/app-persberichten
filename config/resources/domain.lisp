@@ -18,3 +18,4 @@
 (read-domain-file "files.json")
 (read-domain-file "users.json")
 (read-domain-file "mailing-lists.json")
+(read-domain-file "email.lisp")

@@ -56,6 +56,15 @@ defmodule Acl.UserGroups.Config do
     ]
   end
 
+  defp email_resource_types() do
+    [
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Mailbox",
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder",
+      "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Email",
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#MessageHeader",
+    ]
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -92,6 +101,12 @@ defmodule Acl.UserGroups.Config do
             graph: "http://mu.semte.ch/graphs/organizations/",
             constraint: %ResourceConstraint{
               resource_types: press_releases_resource_types()
+            }
+          },
+          %GraphSpec{
+            graph: "http://mu.semte.ch/graphs/system/email",
+            constraint: %ResourceConstraint{
+              resource_types: email_resource_types()
             }
           },
         ]
