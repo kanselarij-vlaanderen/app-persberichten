@@ -7,12 +7,29 @@ alias Acl.GroupSpec.GraphCleanup, as: GraphCleanup
 
 defmodule Acl.UserGroups.Config do
 
+  # Query for the current logged in user's group uuid.
+  #
+  # Current query assumes a user belongs to only one group.
+  # If multiple groups must be allowed, the active group must be attached
+  # to the user session on login and this group must be selected in the SPARQL query.
   defp access_by_group() do
-    # Current query assumes user belongs to only one group.
-    # If multiple groups must be allowed, the active group must be attached
-    # to the user session on login and this group must be selected in the SPARQL query.
     %AccessByQuery{
       vars: ["group_id"],
+      query: "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
+              PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+              PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+              SELECT ?group_id WHERE {
+                <SESSION_ID> session:account / ^foaf:account / ^foaf:member / mu:uuid ?group_id .
+              } LIMIT 1"
+    }
+  end
+
+  # Executes the same query as access_by_group(),
+  # but doesn't return any vars to concat to the group's graph IRI.
+  # Only group membership is checked. Useful if data is not separated in a graph per group.
+  defp access_by_group_membership() do
+    %AccessByQuery{
+      vars: [],
       query: "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
               PREFIX foaf: <http://xmlns.com/foaf/0.1/>
               PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -56,6 +73,15 @@ defmodule Acl.UserGroups.Config do
     ]
   end
 
+  defp email_resource_types() do
+    [
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Mailbox",
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder",
+      "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#Email",
+      # "http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#MessageHeader",
+    ]
+  end
+
   def user_groups do
     # These elements are walked from top to bottom.  Each of them may
     # alter the quads to which the current query applies.  Quads are
@@ -93,7 +119,22 @@ defmodule Acl.UserGroups.Config do
             constraint: %ResourceConstraint{
               resource_types: press_releases_resource_types()
             }
-          },
+          }
+        ]
+      },
+
+      # SYSTEM
+      %GroupSpec{
+        name: "system",
+        useage: [:read, :write, :read_for_write],
+        access: access_by_group_membership(),
+        graphs: [
+          %GraphSpec{
+            graph: "http://mu.semte.ch/graphs/system/email",
+            constraint: %ResourceConstraint{
+              resource_types: email_resource_types()
+            }
+          }
         ]
       },
 

@@ -1,0 +1,50 @@
+PREFIX vlmb: <http://themis.vlaanderen.be/id/mailboxes/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX nmo:  <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX mf: <http://themis.vlaanderen.be/id/mail-folders/>
+
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/system/email> {
+    vlmb:8240e358-b914-47d7-9c9d-c873bcbb76d5   a               nmo:Mailbox;
+                                                mu:uuid         "8240e358-b914-47d7-9c9d-c873bcbb76d5" ;
+                                                nie:hasPart     mf:377a58b3-4afa-4ca8-8809-665a2893cd23 ;
+                                                nie:hasPart     mf:71f0e467-36ef-42cd-8764-5f7c5438ebcf ;
+                                                nie:hasPart     mf:20dbe65e-ba68-4ec1-811e-d8ecd7c4d5b0 ;
+                                                nie:hasPart     mf:7720c91e-e1b3-429f-9943-6cb83bb056c1 ;
+                                                nie:hasPart     mf:2fc151be-91ed-4ce9-8ef9-9b4e80dfeea4 ;
+                                                nie:hasPart     mf:347bd5d8-5cdb-495b-ba89-e65d868e1e34 .
+
+    mf:377a58b3-4afa-4ca8-8809-665a2893cd23     a                   nfo:Folder;
+                                                mu:uuid             "377a58b3-4afa-4ca8-8809-665a2893cd23";
+                                                nie:title           "inbox";
+                                                nie:description     "Incoming mails".
+
+    mf:71f0e467-36ef-42cd-8764-5f7c5438ebcf     a                   nfo:Folder;
+                                                mu:uuid             "71f0e467-36ef-42cd-8764-5f7c5438ebcf";
+                                                nie:title           "outbox";
+                                                nie:description     "Mails to be sent".
+
+    mf:20dbe65e-ba68-4ec1-811e-d8ecd7c4d5b0     a                   nfo:Folder;
+                                                mu:uuid             "20dbe65e-ba68-4ec1-811e-d8ecd7c4d5b0";
+                                                nie:title           "sentbox";
+                                                nie:description     "Sent mails".
+
+    mf:7720c91e-e1b3-429f-9943-6cb83bb056c1     a                   nfo:Folder;
+                                                mu:uuid             "7720c91e-e1b3-429f-9943-6cb83bb056c1";
+                                                nie:title           "sending";
+                                                nie:description     "Mails currently being processed for sending".
+
+    mf:2fc151be-91ed-4ce9-8ef9-9b4e80dfeea4     a                   nfo:Folder;
+                                                mu:uuid             "2fc151be-91ed-4ce9-8ef9-9b4e80dfeea4";
+                                                nie:title           "drafts";
+                                                nie:description     "Draft emails".
+
+    mf:347bd5d8-5cdb-495b-ba89-e65d868e1e34     a                   nfo:Folder;
+                                                mu:uuid             "347bd5d8-5cdb-495b-ba89-e65d868e1e34";
+                                                nie:title           "failbox";
+                                                nie:description     "Mails failed to be sent".
+  }
+}

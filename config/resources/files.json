@@ -44,6 +44,12 @@
           "target": "press-releases",
           "cardinality": "one",
           "inverse": true
+        },
+        "emails": {
+          "predicate": "nmo:hasAttachment",
+          "target": "emails",
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
