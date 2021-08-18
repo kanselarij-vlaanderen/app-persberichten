@@ -1,6 +1,7 @@
 alias Acl.Accessibility.Always, as: AlwaysAccessible
 alias Acl.Accessibility.ByQuery, as: AccessByQuery
 alias Acl.GraphSpec.Constraint.Resource, as: ResourceConstraint
+alias Acl.GraphSpec.Constraint.Resource.NoPredicates, as: NoPredicates
 alias Acl.GraphSpec, as: GraphSpec
 alias Acl.GroupSpec, as: GroupSpec
 alias Acl.GroupSpec.GraphCleanup, as: GraphCleanup
@@ -118,6 +119,21 @@ defmodule Acl.UserGroups.Config do
             graph: "http://mu.semte.ch/graphs/organizations/",
             constraint: %ResourceConstraint{
               resource_types: press_releases_resource_types()
+            }
+          },
+          # Relation from PublicationChannel to PublicationEvent
+          # (all other publication channel data is part of the public graph)
+          %GraphSpec{
+            graph: "http://mu.semte.ch/graphs/organizations/",
+            constraint: %ResourceConstraint{
+              resource_types: [
+                "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel"
+              ],
+              predicates: %NoPredicates{
+                except: [
+                  "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent"
+                ]
+              }
             }
           }
         ]
