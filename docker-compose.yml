@@ -12,8 +12,7 @@ services:
     restart: always
     logging: *default-logging
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"},{\"variables\":[],\"name\":\"clean\"}]"
-      LOG_OUTGOING_SPARQL_QUERIES: "true"
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"},{\"variables\":[\"published\"],\"name\":\"unauthenticated-published\"},{\"variables\":[],\"name\":\"clean\"}]"
   dispatcher:
     image: semtech/mu-dispatcher:2.0.0
     volumes:

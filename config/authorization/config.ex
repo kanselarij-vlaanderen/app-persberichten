@@ -9,6 +9,24 @@ alias Acl.GroupSpec.GraphCleanup, as: GraphCleanup
 
 defmodule Acl.UserGroups.Config do
 
+  # Workaround to distinguish between authenticated and unauthenticated users.
+  # Query returns "published" only for unauthenticated users.
+  defp unauthenticated_access_to_published() do
+    %AccessByQuery{
+      vars: ["value"],
+      query: "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
+              PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+              PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+              SELECT ?value WHERE {
+                ?s ?p ?o .
+                FILTER NOT EXISTS {
+                  <SESSION_ID> session:account ?account .
+                }
+                BIND(\"published\" as ?value)
+              } LIMIT 1"
+    }
+  end
+
   # Query for the current logged in user's group uuid.
   #
   # Current query assumes a user belongs to only one group.
@@ -92,7 +110,7 @@ defmodule Acl.UserGroups.Config do
     # many ways.  The useage of a GroupSpec and GraphCleanup are
     # common.
     [
-      # PUBLIC
+      # PUBLIC DATA
       %GroupSpec{
         name: "public",
         useage: [:read],
@@ -111,6 +129,22 @@ defmodule Acl.UserGroups.Config do
             graph: "http://mu.semte.ch/graphs/sessions",
             constraint: %ResourceFormatConstraint{
               resource_prefix: "http://mu.semte.ch/sessions/"
+            }
+          }
+        ]
+      },
+
+      # PUBLISHED DATA FOR UNAUTHENTICATED USERS (i.e. webplatform Vlaanderen.be)
+      %GroupSpec{
+        name: "unauthenticated-published",
+        useage: [:read],
+        access: unauthenticated_access_to_published(),
+        graphs: [
+          %GraphSpec{
+            # published will be appended to the graph name for unauthenticated users
+            graph: "http://mu.semte.ch/graphs/",
+            constraint: %ResourceConstraint{
+              resource_types: press_releases_resource_types()
             }
           }
         ]
