@@ -89,7 +89,7 @@ defmodule Acl.UserGroups.Config do
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
       "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#ContactList",
-      "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Contact",
+      "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Contact"
     ]
   end
 
@@ -173,6 +173,21 @@ defmodule Acl.UserGroups.Config do
               predicates: %NoPredicates{
                 except: [
                   "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent"
+                ]
+              }
+            }
+          },
+          # Relation from ebucore:Contact to vcard:Organization
+          # (all other organization data is part of the public graph)
+          %GraphSpec{
+            graph: "http://mu.semte.ch/graphs/organizations/",
+            constraint: %ResourceConstraint{
+              resource_types: [
+                "http://www.w3.org/2006/vcard/ns#Organization",
+              ],
+              predicates: %NoPredicates{
+                except: [
+                  "http://www.w3.org/ns/org#hasMember"
                 ]
               }
             }
