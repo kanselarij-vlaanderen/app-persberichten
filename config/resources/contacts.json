@@ -106,7 +106,7 @@
         }
       },
       "relationships": {
-        "contacts": {
+        "members": {
           "predicate": "org:hasMember",
           "target": "contacts",
           "cardinality": "many"
@@ -117,7 +117,7 @@
           "cardinality": "many",
           "inverse": true
         },
-        "sources": {
+        "contacts": {
           "predicate": "dct:creator",
           "target": "contacts",
           "cardinality": "many",
