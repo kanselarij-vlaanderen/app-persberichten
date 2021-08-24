@@ -79,6 +79,11 @@
           "cardinality": "one",
           "inverse": true
         },
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "organizations",
+          "cardinality": "one"
+        },
         "press-releases": {
           "predicate": "dct:source",
           "target": "press-releases",
@@ -110,6 +115,30 @@
           "predicate": "dct:creator",
           "target": "press-releases",
           "cardinality": "many",
+          "inverse": true
+        },
+        "sources": {
+          "predicate": "dct:creator",
+          "target": "contacts",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "mail-addresses": {
+          "predicate": "dct:creator",
+          "target": "mail-addresses",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "telephones": {
+          "predicate": "dct:creator",
+          "target": "telephones",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "mobile-phones": {
+          "predicate": "dct:creator",
+          "target": "mobile-phones",
+          "cardinality": "one",
           "inverse": true
         },
         "collaborations": {
@@ -149,6 +178,11 @@
           "target": "contacts",
           "cardinality": "one",
           "inverse": true
+        },
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "organizations",
+          "cardinality": "one"
         }
       },
       "features": [
@@ -180,6 +214,11 @@
           "target": "contact-items",
           "cardinality": "one",
           "inverse": true
+        },
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "organizations",
+          "cardinality": "one"
         }
       },
       "features": [
@@ -211,6 +250,11 @@
           "target": "contact-items",
           "cardinality": "one",
           "inverse": true
+        },
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "organizations",
+          "cardinality": "one"
         }
       },
       "features": [
