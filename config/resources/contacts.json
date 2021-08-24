@@ -120,25 +120,25 @@
         "sources": {
           "predicate": "dct:creator",
           "target": "contacts",
-          "cardinality": "one",
+          "cardinality": "many",
           "inverse": true
         },
         "mail-addresses": {
           "predicate": "dct:creator",
           "target": "mail-addresses",
-          "cardinality": "one",
+          "cardinality": "many",
           "inverse": true
         },
         "telephones": {
           "predicate": "dct:creator",
           "target": "telephones",
-          "cardinality": "one",
+          "cardinality": "many",
           "inverse": true
         },
         "mobile-phones": {
           "predicate": "dct:creator",
           "target": "mobile-phones",
-          "cardinality": "one",
+          "cardinality": "many",
           "inverse": true
         },
         "collaborations": {
