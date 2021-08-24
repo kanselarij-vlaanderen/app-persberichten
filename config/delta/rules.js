@@ -41,7 +41,7 @@ export default [
             },
         },
         callback: {
-            url: 'http:/press-release-email-generator/delta', method: 'POST',
+            url: 'http:/press-releases-email-generator/delta', method: 'POST',
         },
         options: {
             resourceFormat: 'v0.0.1',
