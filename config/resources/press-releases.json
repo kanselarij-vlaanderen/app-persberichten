@@ -13,6 +13,7 @@
     "nco": "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#",
     "nfo": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#",
     "nie": "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#",
+    "owl": "http://www.w3.org/2002/07/owl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
     "prov": "http://www.w3.org/ns/prov#"
@@ -179,11 +180,15 @@
     },
     "themes": {
       "new-resource-base": "http://themis.vlaanderen.be/id/concept/thema/",
-      "class": "ext:Thema",
+      "class": "ext:ThemaCode",
       "attributes": {
         "label": {
           "type": "string",
           "predicate": "skos:prefLabel"
+        },
+        "is-deprecated": {
+          "type": "boolean",
+          "predicate": "owl:deprecated"
         }
       },
       "features": [
