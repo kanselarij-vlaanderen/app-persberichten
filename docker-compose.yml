@@ -100,3 +100,7 @@ services:
     restart: always
     labels:
       - "logging=true"
+  press-releases-email-generator:
+    image: kanselarij/press-releases-email-generator-service:0.1.0
+    restart: always
+    logging: *default-logging
