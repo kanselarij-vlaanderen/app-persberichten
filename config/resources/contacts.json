@@ -100,6 +100,10 @@
           "type": "string",
           "predicate": "vcard:fn"
         },
+        "short-name": {
+          "type": "string",
+          "predicate": "foaf:name"
+        },
         "identifier": {
           "type": "string",
           "predicate": "dct:identifier"
