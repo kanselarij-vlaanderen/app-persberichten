@@ -23,5 +23,13 @@ services:
     restart: "no"
   file:
     restart: "no"
+  csv-file-parser:
+    restart: "no"
+  publication-tasks-generator:
+    restart: "no"
+  press-releases-email-generator:
+    restart: "no"
+  press-releases-belga-publication:
+    restart: "no"
   mail-delivery:
     restart: "no"
