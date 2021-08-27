@@ -104,3 +104,13 @@ services:
     image: kanselarij/press-releases-email-generator-service:0.1.0
     restart: always
     logging: *default-logging
+  press-releases-belga-publication:
+    image: kanselarij/press-releases-belga-publication-service:0.1.0
+    volumes:
+      - ./data/belga:/share
+    logging: *default-logging
+    environment:
+      BELGA_FTP_USERNAME: 'username'
+      BELGA_FTP_PASSWORD: 'password'
+      BELGA_FTP_HOST: 'host'
+    restart: always
