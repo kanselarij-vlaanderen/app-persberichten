@@ -109,4 +109,8 @@ services:
     volumes:
       - ./data/belga:/share
     logging: *default-logging
+    environment:
+      BELGA_FTP_USERNAME: 'username'
+      BELGA_FTP_PASSWORD: 'password'
+      BELGA_FTP_HOST: 'host'
     restart: always
