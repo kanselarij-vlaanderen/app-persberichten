@@ -21,7 +21,8 @@ export default [
             },
         },
         callback: {
-            url: 'http://publication-tasks-generator/delta', method: 'POST',
+            url: 'http://publication-tasks-generator/delta',
+            method: 'POST',
         },
         options: {
             resourceFormat: 'v0.0.1',
@@ -41,7 +42,8 @@ export default [
             },
         },
         callback: {
-            url: 'http://press-releases-email-generator/delta', method: 'POST',
+            url: 'http://press-releases-email-generator/delta',
+            method: 'POST',
         },
         options: {
             resourceFormat: 'v0.0.1',
@@ -61,7 +63,8 @@ export default [
             },
         },
         callback: {
-            url: 'http://press-releases-belga-publication/delta', method: 'POST',
+            url: 'http://press-releases-belga-publication/delta',
+            method: 'POST',
         },
         options: {
             resourceFormat: 'v0.0.1',
@@ -70,5 +73,3 @@ export default [
         },
     },
 ];
-
-
