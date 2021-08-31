@@ -12,6 +12,10 @@
         "name": {
           "type": "string",
           "predicate": "vcard:fn"
+        },
+        "modified": {
+          "type": "datetime",
+          "predicate": "dct:modified"
         }
       },
       "relationships": {
