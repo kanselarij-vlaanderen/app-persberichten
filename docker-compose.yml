@@ -7,6 +7,10 @@ x-logging: &default-logging
     max-file: "3"
 
 services:
+  frontend:
+    image: kanselarij/frontend-persberichten:latest
+    links:
+      - identifier:backend
   identifier:
     image: semtech/mu-identifier:1.9.1
     environment:
@@ -25,6 +29,7 @@ services:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       DATABASE_COMPATIBILITY: "Virtuoso"
       DATABASE_OVERLOAD_RECOVERY: "on"
+      LOG_OUTGOING_SPARQL_QUERIES: "on"
     volumes:
       - ./config/authorization:/config
     restart: always
@@ -57,6 +62,25 @@ services:
     image: kanselarij/mock-login-service:1.0.0
     restart: always
     logging: *default-logging
+  login:
+    image: kanselarij/acmidm-login-service:1.2.1
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://VLIVIA-dev.vlaanderen.be/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "THIS IS OUR SECRET"
+      MU_APPLICATION_AUTH_ROLE_CLAIM: "vo_orglijst"
+      MU_APPLICATION_AUTH_USERID_CLAIM: "vo_id"
+      DEBUG_LOG_TOKENSETS: "true"
+      MU_APPLICATION_RESOURCE_BASE_URI: "http://themis.vlaanderen.be/"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public" # used for UserGroup resources
+      MU_APPLICATION_AUTH_DEFAULT_GROUP_URI: "http://data.kanselarij.vlaanderen.be/id/group/user"
+      REQUEST_RETRIES: 1
+      REQUEST_TIMEOUT: 5000
+    logging: *default-logging
+    restart: always
+    labels:
+      - "logging=true"
   cache:
     image: semtech/mu-cache:2.0.2
     links:
