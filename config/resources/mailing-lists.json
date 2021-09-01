@@ -12,6 +12,14 @@
         "name": {
           "type": "string",
           "predicate": "vcard:fn"
+        },
+        "created": {
+          "type": "datetime",
+          "predicate": "dct:created"
+        },
+        "modified": {
+          "type": "datetime",
+          "predicate": "dct:modified"
         }
       },
       "relationships": {
@@ -55,6 +63,14 @@
         "organization-name": {
           "type": "string",
           "predicate": "vcard:organization-name"
+        },
+        "created": {
+          "type": "datetime",
+          "predicate": "dct:created"
+        },
+        "modified": {
+          "type": "datetime",
+          "predicate": "dct:modified"
         }
       },
       "relationships": {
