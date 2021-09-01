@@ -211,11 +211,6 @@
         }
       },
       "relationships": {
-        "editor": {
-          "predicate": "ext:currentEditor",
-          "target": "organizations",
-          "cardinality": "one"
-        },
         "collaborators": {
           "predicate": "prov:wasAssociatedWith",
           "target": "organizations",
@@ -293,7 +288,7 @@
         "include-uri"
       ]
     },
-    "press-release-activity": {
+    "press-release-activities": {
       "new-resource-base": "http://themis.vlaanderen.be/id/persberichtenactiviteit/",
       "class": "ext:PressReleaseActivity",
       "attributes": {
@@ -302,7 +297,7 @@
           "predicate": "prov:startedAtTime"
         },
         "type": {
-          "type": "uri",
+          "type": "string",
           "predicate": "dct:type"
         }
       },

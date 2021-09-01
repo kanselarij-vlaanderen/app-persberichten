@@ -162,12 +162,6 @@
           "target": "collaboration-activities",
           "cardinality": "many",
           "inverse": true
-        },
-        "editor-collaborations": {
-          "predicate": "ext:currentEditor",
-          "target": "collaboration-activities",
-          "cardinality": "many",
-          "inverse": true
         }
       },
       "features": [
