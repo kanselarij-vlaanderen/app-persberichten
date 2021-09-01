@@ -63,7 +63,7 @@ export default [
             },
         },
         callback: {
-            url: 'http://press-releases-belga-publication/delta',
+            url: 'http://belga-publication/delta',
             method: 'POST',
         },
         options: {

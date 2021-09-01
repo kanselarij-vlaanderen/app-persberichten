@@ -91,7 +91,7 @@ services:
     image: kanselarij/press-releases-email-generator-service:0.1.1
     restart: always
     logging: *default-logging
-  press-releases-belga-publication:
+  belga-publication:
     image: kanselarij/press-releases-belga-publication-service:0.1.1
     volumes:
       - ./data/belga:/share
