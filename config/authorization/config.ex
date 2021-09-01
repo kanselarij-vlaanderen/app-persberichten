@@ -89,7 +89,10 @@ defmodule Acl.UserGroups.Config do
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
       "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#ContactList",
-      "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Contact"
+      "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Contact",
+      "http://mu.semte.ch/vocabularies/ext/ApprovalActivity",
+      "http://mu.semte.ch/vocabularies/ext/PressReleaseActivity",
+      "http://mu.semte.ch/vocabularies/ext/CollaborationActivity"
     ]
   end
 
