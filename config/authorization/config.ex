@@ -87,7 +87,6 @@ defmodule Acl.UserGroups.Config do
       "http://purl.org/spar/fabio/PressRelease",
       "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent",
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-      "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#ContactList",
       "http://www.semanticdesktop.org/ontologies/2007/03/22/nco#Contact",
       "http://mu.semte.ch/vocabularies/ext/ApprovalActivity",
