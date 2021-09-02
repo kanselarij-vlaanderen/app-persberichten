@@ -297,7 +297,7 @@
           "predicate": "prov:startedAtTime"
         },
         "type": {
-          "type": "string",
+          "type": "url",
           "predicate": "dct:type"
         }
       },
