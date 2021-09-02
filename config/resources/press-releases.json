@@ -99,6 +99,12 @@
           "predicate": "ext:contactLists",
           "target": "contact-lists",
           "cardinality": "many"
+        },
+        "press-release-activities": {
+          "predicate": "ext:used",
+          "target": "press-release-activities",
+          "cardinality": "many",
+          "inverse": true
         }
       },
       "features": [
@@ -195,29 +201,33 @@
         "include-uri"
       ]
     },
-    "collaboration-activities": {
-      "new-resource-base": "http://themis.vlaanderen.be/id/samenwerkingsactiviteit/",
-      "class": "ext:CollaborationActivity",
+    "press-release-activities": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/persberichtenactiviteit/",
+      "class": "ext:PressReleaseActivity",
       "attributes": {
         "start-date": {
           "type": "datetime",
           "predicate": "prov:startedAtTime"
+        },
+        "type": {
+          "type": "url",
+          "predicate": "dct:type"
         }
       },
       "relationships": {
-        "editor": {
-          "predicate": "ext:currentEditor",
+        "press-release": {
+          "predicate": "ext:used",
+          "target": "press-releases",
+          "cardinality": "one"
+        },
+        "organization": {
+          "predicate": "prov:wasAssociatedWith",
           "target": "organizations",
           "cardinality": "one"
         },
-        "collaborators": {
-          "predicate": "prov:wasAssociatedWith",
-          "target": "organizations",
-          "cardinality": "many"
-        },
-        "press-release": {
-          "predicate": "prov:used",
-          "target": "press-releases",
+        "creator": {
+          "predicate": "dct:creator",
+          "target": "users",
           "cardinality": "one"
         }
       },

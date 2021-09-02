@@ -116,6 +116,26 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/government-fields/"
   end
 
+  post "/collaboration-activities/*path", @json do
+    forward conn, path, "http://cache/collaboration-activities/"
+  end
+
+  get "/collaboration-activities/*path", @json do
+    forward conn, path, "http://cache/collaboration-activities/"
+  end
+
+  get "/approval-activities/*path", @json do
+    forward conn, path, "http://cache/approval-activities/"
+  end
+
+  post "/press-release-activities/*path", @json do
+    forward conn, path, "http://cache/press-release-activities/"
+  end
+
+  get "/press-release-activities/*path", @json do
+    forward conn, path, "http://cache/press-release-activities/"
+  end
+
   get "/csv/:id/parse", @json do
     forward conn, [], "http://csv-file-parser/csv/" <> id <> "/parse"
   end
