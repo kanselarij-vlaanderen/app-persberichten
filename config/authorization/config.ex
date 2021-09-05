@@ -46,7 +46,8 @@ defmodule Acl.UserGroups.Config do
 
   # Executes the same query as access_by_group(),
   # but doesn't return any vars to concat to the group's graph IRI.
-  # Only group membership is checked. Useful if data is not separated in a graph per group.
+  # Only group membership is checked. Useful if data is not separated in a graph per group,
+  # but should be accessible only to members of any group.
   defp access_by_group_membership() do
     %AccessByQuery{
       vars: [],
@@ -70,7 +71,7 @@ defmodule Acl.UserGroups.Config do
     ]
   end
 
-  defp authentication_resource_types() do
+  defp mock_authentication_resource_types() do
     [
       "http://xmlns.com/foaf/0.1/Person",
       "http://xmlns.com/foaf/0.1/OnlineAccount",
@@ -121,7 +122,7 @@ defmodule Acl.UserGroups.Config do
             constraint: %ResourceConstraint{
               resource_types: [
                 codelists_resource_types() ++
-                authentication_resource_types()
+                mock_authentication_resource_types()
               ]
             }
           },
