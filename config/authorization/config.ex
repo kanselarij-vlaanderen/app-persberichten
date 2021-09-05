@@ -29,17 +29,18 @@ defmodule Acl.UserGroups.Config do
 
   # Query for the current logged in user's group uuid.
   #
-  # Current query assumes a user belongs to only one group.
-  # If multiple groups must be allowed, the active group must be attached
-  # to the user session on login and this group must be selected in the SPARQL query.
+  # A user may belong to multiple groups, but is always logged in on behalf of
+  # only one group. That group is attached directly to the session.
+  # All groups a user belongs to can be retrieved via
+  # <SESSION_ID> session:account / ^foaf:account / ^foaf:member ?group .
   defp access_by_group() do
     %AccessByQuery{
       vars: ["group_id"],
       query: "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
-              PREFIX foaf: <http://xmlns.com/foaf/0.1/>
               PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+              PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
               SELECT ?group_id WHERE {
-                <SESSION_ID> session:account / ^foaf:account / ^foaf:member / mu:uuid ?group_id .
+                <SESSION_ID> ext:sessionGroup / mu:uuid ?group_id .
               } LIMIT 1"
     }
   end
@@ -47,15 +48,15 @@ defmodule Acl.UserGroups.Config do
   # Executes the same query as access_by_group(),
   # but doesn't return any vars to concat to the group's graph IRI.
   # Only group membership is checked. Useful if data is not separated in a graph per group,
-  # but should be accessible only to members of any group.
+  # but should be accessible only to members loggen in on behalf of _any_ group.
   defp access_by_group_membership() do
     %AccessByQuery{
       vars: [],
       query: "PREFIX session: <http://mu.semte.ch/vocabularies/session/>
-              PREFIX foaf: <http://xmlns.com/foaf/0.1/>
               PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+              PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
               SELECT ?group_id WHERE {
-                <SESSION_ID> session:account / ^foaf:account / ^foaf:member / mu:uuid ?group_id .
+                <SESSION_ID> ext:sessionGroup / mu:uuid ?group_id .
               } LIMIT 1"
     }
   end
