@@ -121,6 +121,18 @@
           "cardinality": "many",
           "inverse": true
         },
+        "approval-activities": {
+          "predicate": "prov:wasAssociatedWith",
+          "target": "approval-activities",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "press-release-activities": {
+          "predicate": "prov:wasAssociatedWith",
+          "target": "press-release-activities",
+          "cardinality": "many",
+          "inverse": true
+        },
         "contacts": {
           "predicate": "dct:creator",
           "target": "contacts",
@@ -147,12 +159,6 @@
         },
         "collaborations": {
           "predicate": "prov:wasAssociatedWith",
-          "target": "collaboration-activities",
-          "cardinality": "many",
-          "inverse": true
-        },
-        "editor-collaborations": {
-          "predicate": "ext:currentEditor",
           "target": "collaboration-activities",
           "cardinality": "many",
           "inverse": true

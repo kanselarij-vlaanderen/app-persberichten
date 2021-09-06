@@ -34,6 +34,18 @@
           "target": "user-groups",
           "cardinality": "one",
           "inverse": true
+        },
+        "token-claims": {
+          "predicate": "prov:wasAttributedTo",
+          "target": "token-claims",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "press-release-activities": {
+          "predicate": "dct:creator",
+          "target": "press-release-activities",
+          "cardinality": "many",
+          "inverse": true
         }
       }
     },

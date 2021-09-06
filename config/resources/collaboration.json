@@ -1,0 +1,98 @@
+{
+  "version": "0.1",
+  "prefixes": {
+    "dct": "http://purl.org/dc/terms/",
+    "ext": "http://mu.semte.ch/vocabularies/ext/",
+    "mu": "http://mu.semte.ch/vocabularies/core/",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "resources": {
+    "collaboration-activities": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/samenwerkingsactiviteit/",
+      "class": "ext:CollaborationActivity",
+      "attributes": {
+        "start-date": {
+          "type": "datetime",
+          "predicate": "prov:startedAtTime"
+        }
+      },
+      "relationships": {
+        "collaborators": {
+          "predicate": "prov:wasAssociatedWith",
+          "target": "organizations",
+          "cardinality": "many"
+        },
+        "press-release": {
+          "predicate": "prov:used",
+          "target": "press-releases",
+          "cardinality": "one"
+        },
+        "approval-activities": {
+          "predicate": "prov:wasInformedBy",
+          "target": "approval-activities",
+          "cardinality": "many",
+          "inverse": true
+        },
+        "token-claim": {
+          "predicate": "prov:generated",
+          "target": "token-claims",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "approval-activities": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/goedkeuringsactiviteit/",
+      "class": "ext:ApprovalActivity",
+      "attributes": {
+        "start-date": {
+          "type": "datetime",
+          "predicate": "prov:startedAtTime"
+        }
+      },
+      "relationships": {
+        "collaborator": {
+          "predicate": "prov:wasAssociatedWith",
+          "target": "organizations",
+          "cardinality": "one"
+        },
+        "collaboration-activity": {
+          "predicate": "prov:wasInformedBy",
+          "target": "collaboration-activities",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    },
+    "token-claims": {
+      "new-resource-base": "http://themis.vlaanderen.be/id/tokenclaim/",
+      "class": "ext:TokenClaim",
+      "attributes": {
+        "created": {
+          "type": "datetime",
+          "predicate": "dct:created"
+        }
+      },
+      "relationships": {
+        "collaboration-activity": {
+          "predicate": "prov:generated",
+          "target": "collaboration-activities",
+          "cardinality": "one",
+          "inverse": true
+        },
+        "user": {
+          "predicate": "prov:wasAttributedTo",
+          "target": "users",
+          "cardinality": "one"
+        }
+      },
+      "features": [
+        "include-uri"
+      ]
+    }
+  }
+}
