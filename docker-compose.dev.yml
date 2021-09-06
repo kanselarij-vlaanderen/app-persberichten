@@ -1,6 +1,9 @@
 version: '3.4'
 
 services:
+  frontend:
+    entrypoint: ["echo", "Service disabled"]
+    restart: "no"
   identifier:
     ports:
       - "80:80"
@@ -27,9 +30,11 @@ services:
     restart: "no"
   publication-tasks-generator:
     restart: "no"
-  press-releases-email-generator:
+  email-publication:
     restart: "no"
   belga-publication:
     restart: "no"
   mail-delivery:
+    restart: "no"
+  collaboration:
     restart: "no"
