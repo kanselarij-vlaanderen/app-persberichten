@@ -67,6 +67,7 @@ defmodule Acl.UserGroups.Config do
       "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel",
       "http://mu.semte.ch/vocabularies/ext/Thema",
       "http://www.w3.org/2006/vcard/ns#Organization",
+      "http://xmlns.com/foaf/0.1/Group", # additional type of vcard:Organization
       "http://kanselarij.vo.data.gift/core/Beleidsveld",
       "http://kanselarij.vo.data.gift/core/Beleidsdomein",
     ]
@@ -75,8 +76,14 @@ defmodule Acl.UserGroups.Config do
   defp mock_authentication_resource_types() do
     [
       "http://xmlns.com/foaf/0.1/Person",
-      "http://xmlns.com/foaf/0.1/OnlineAccount",
-      "http://xmlns.com/foaf/0.1/Group"
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
+    ]
+  end
+
+  defp authentication_resource_types() do
+    [
+      "http://xmlns.com/foaf/0.1/Person",
+      "http://xmlns.com/foaf/0.1/OnlineAccount"
     ]
   end
 
@@ -162,6 +169,7 @@ defmodule Acl.UserGroups.Config do
             graph: "http://mu.semte.ch/graphs/organizations/",
             constraint: %ResourceConstraint{
               resource_types: press_releases_resource_types()
+              ++ authentication_resource_types()
             }
           },
           # Relation from PublicationChannel to PublicationEvent
@@ -190,6 +198,21 @@ defmodule Acl.UserGroups.Config do
               predicates: %NoPredicates{
                 except: [
                   "http://www.w3.org/ns/org#hasMember"
+                ]
+              }
+            }
+          },
+          # Relation from foaf:Group to foaf:Person
+          # (all other group data is part of the public graph)
+          %GraphSpec{
+            graph: "http://mu.semte.ch/graphs/organizations/",
+            constraint: %ResourceConstraint{
+              resource_types: [
+                "http://xmlns.com/foaf/0.1/Group"
+              ],
+              predicates: %NoPredicates{
+                except: [
+                  "http://xmlns.com/foaf/0.1/member"
                 ]
               }
             }
