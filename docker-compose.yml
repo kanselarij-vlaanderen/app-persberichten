@@ -11,6 +11,12 @@ services:
     image: kanselarij/frontend-persberichten:latest
     links:
       - identifier:backend
+    environment:
+      EMBER_OAUTH_API_KEY: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
+      EMBER_OAUTH_BASE_URL: "https://authenticatie-ti.vlaanderen.be/op/v1/auth"
+      EMBER_OAUTH_REDIRECT_URL: "https://VLIVIA-dev.vlaanderen.be/authorization/callback"
+      EMBER_OAUTH_LOGOUT_URL: "https://authenticatie-ti.vlaanderen.be/op/v1/logout"
+      EMBER_OAUTH_RETURN_URL: "https://VLIVIA-dev.vlaanderen.be"
   identifier:
     image: semtech/mu-identifier:1.9.1
     environment:
@@ -69,14 +75,6 @@ services:
       MU_APPLICATION_AUTH_CLIENT_ID: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
       MU_APPLICATION_AUTH_REDIRECT_URI: "https://VLIVIA-dev.vlaanderen.be/authorization/callback"
       MU_APPLICATION_AUTH_CLIENT_SECRET: "THIS IS OUR SECRET"
-      MU_APPLICATION_AUTH_ROLE_CLAIM: "vo_orglijst"
-      MU_APPLICATION_AUTH_USERID_CLAIM: "vo_id"
-      DEBUG_LOG_TOKENSETS: "true"
-      MU_APPLICATION_RESOURCE_BASE_URI: "http://themis.vlaanderen.be/"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/public" # used for UserGroup resources
-      MU_APPLICATION_AUTH_DEFAULT_GROUP_URI: "http://data.kanselarij.vlaanderen.be/id/group/user"
-      REQUEST_RETRIES: 1
-      REQUEST_TIMEOUT: 5000
     logging: *default-logging
     restart: always
     labels:
