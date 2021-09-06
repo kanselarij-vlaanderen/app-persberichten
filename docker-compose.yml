@@ -109,7 +109,7 @@ services:
     image: kanselarij/press-releases-publication-tasks-generator-service:0.1.0
     restart: always
     logging: *default-logging
-  press-releases-email-generator:
+  email-publication:
     image: kanselarij/press-releases-email-generator-service:0.1.1
     restart: always
     logging: *default-logging

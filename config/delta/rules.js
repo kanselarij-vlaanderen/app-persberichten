@@ -42,7 +42,7 @@ export default [
             },
         },
         callback: {
-            url: 'http://press-releases-email-generator/delta',
+            url: 'http://email-publication/delta',
             method: 'POST',
         },
         options: {
