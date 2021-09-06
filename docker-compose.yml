@@ -112,3 +112,7 @@ services:
       - ./data/files:/share
     restart: always
     logging: *default-logging
+  collaboration:
+    image: kanselarij/press-releases-collaboration-service:0.1.0
+    restart: always
+    logging: *default-logging
