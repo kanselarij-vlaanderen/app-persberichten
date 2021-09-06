@@ -7,6 +7,16 @@ x-logging: &default-logging
     max-file: "3"
 
 services:
+  frontend:
+    image: kanselarij/frontend-persberichten:latest
+    links:
+      - identifier:backend
+    environment:
+      EMBER_OAUTH_API_KEY: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
+      EMBER_OAUTH_BASE_URL: "https://authenticatie-ti.vlaanderen.be/op/v1/auth"
+      EMBER_OAUTH_REDIRECT_URL: "https://VLIVIA-dev.vlaanderen.be/authorization/callback"
+      EMBER_OAUTH_LOGOUT_URL: "https://authenticatie-ti.vlaanderen.be/op/v1/logout"
+      EMBER_OAUTH_RETURN_URL: "https://VLIVIA-dev.vlaanderen.be"
   identifier:
     image: semtech/mu-identifier:1.9.1
     environment:
@@ -25,6 +35,7 @@ services:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       DATABASE_COMPATIBILITY: "Virtuoso"
       DATABASE_OVERLOAD_RECOVERY: "on"
+      LOG_OUTGOING_SPARQL_QUERIES: "on"
     volumes:
       - ./config/authorization:/config
     restart: always
@@ -57,6 +68,17 @@ services:
     image: kanselarij/mock-login-service:1.0.0
     restart: always
     logging: *default-logging
+  login:
+    image: kanselarij/press-releases-acmidm-login-service:0.1.0
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://VLIVIA-dev.vlaanderen.be/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "THIS IS OUR SECRET"
+    logging: *default-logging
+    restart: always
+    labels:
+      - "logging=true"
   cache:
     image: semtech/mu-cache:2.0.2
     links:
