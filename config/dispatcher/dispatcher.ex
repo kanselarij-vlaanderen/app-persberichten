@@ -124,6 +124,14 @@ defmodule Dispatcher do
     forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/share"
   end
 
+  post "/collaboration-activities/:id/claims", @json do
+    forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/claims"
+  end
+
+  delete "/collaboration-activities/:id/claims", @json do
+    forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/claims"
+  end
+
   post "/collaboration-activities/*path", @json do
     forward conn, path, "http://cache/collaboration-activities/"
   end
