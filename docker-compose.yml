@@ -135,6 +135,6 @@ services:
     restart: always
     logging: *default-logging
   collaboration:
-    image: kanselarij/press-releases-collaboration-service:0.1.0
+    image: kanselarij/press-releases-collaboration-service:0.2.0
     restart: always
     logging: *default-logging
