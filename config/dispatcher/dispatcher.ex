@@ -156,6 +156,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/press-release-activities/"
   end
 
+  get "/token-claims/*path", @json do
+    forward conn, path, "http://cache/token-claims/"
+  end
+
   get "/csv/:id/parse", @json do
     forward conn, [], "http://csv-file-parser/csv/" <> id <> "/parse"
   end
