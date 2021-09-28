@@ -135,7 +135,7 @@ services:
     restart: always
     logging: *default-logging
   collaboration:
-    image: kanselarij/press-releases-collaboration-service:0.4.3
+    image: kanselarij/press-releases-collaboration-service:0.5.0
     restart: always
     logging: *default-logging
   mailchimp-publication:
