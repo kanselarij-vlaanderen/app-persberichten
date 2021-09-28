@@ -149,7 +149,7 @@ defmodule Dispatcher do
   end
 
   get "/approval-activities/*path", @json do
-    forward conn, path, "http://cache/approval-activities/"
+    forward conn, path, "http://resource/approval-activities/"
   end
 
   post "/press-release-activities/*path", @json do
