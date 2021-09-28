@@ -105,7 +105,8 @@ defmodule Acl.UserGroups.Config do
   defp collaboration_resource_types() do
     [
       "http://mu.semte.ch/vocabularies/ext/ApprovalActivity",
-      "http://mu.semte.ch/vocabularies/ext/CollaborationActivity"
+      "http://mu.semte.ch/vocabularies/ext/CollaborationActivity",
+      "http://mu.semte.ch/vocabularies/ext/TokenClaim"
     ]
   end
 
