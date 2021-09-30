@@ -145,15 +145,15 @@ defmodule Dispatcher do
   end
 
   post "/collaboration-activities/*path", @json do
-    forward conn, path, "http://resource/collaboration-activities/"
+    forward conn, path, "http://cache/collaboration-activities/"
   end
 
   get "/collaboration-activities/*path", @json do
-    forward conn, path, "http://resource/collaboration-activities/"
+    forward conn, path, "http://cache/collaboration-activities/"
   end
 
   get "/approval-activities/*path", @json do
-    forward conn, path, "http://resource/approval-activities/"
+    forward conn, path, "http://cache/approval-activities/"
   end
 
   post "/press-release-activities/*path", @json do
@@ -165,7 +165,9 @@ defmodule Dispatcher do
   end
 
   get "/token-claims/*path", @json do
-    forward conn, path, "http://cache/token-claims/"
+    # Directly connecting to resource since there seems to be a bug in cache clearing
+    # when cache entries for multiple authorization groups must be cleared
+    forward conn, path, "http://resource/token-claims/"
   end
 
   get "/csv/:id/parse", @json do
