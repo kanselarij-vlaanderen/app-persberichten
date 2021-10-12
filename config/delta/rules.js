@@ -93,4 +93,25 @@ export default [
             ignoreFromSelf: true,
         },
     },
+    {
+        match: {
+            predicate: {
+                type: 'uri',
+                value: 'http://www.w3.org/ns/adms#status'
+            },
+            object: {
+                type: 'uri',
+                value: 'http://themis.vlaanderen.be/id/concept/publication-task-status/not-started'
+            },
+        },
+        callback: {
+            url: 'http://api-publication/delta',
+            method: 'POST'
+        },
+        options: {
+            resourceFormat: 'v0.0.1',
+            gracePeriod: 250,
+            ignoreFromSelf: true
+        },
+    },
 ];

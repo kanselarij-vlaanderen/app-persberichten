@@ -105,6 +105,10 @@ services:
       - ./data/files:/share
     restart: always
     logging: *default-logging
+  collaboration:
+    image: kanselarij/press-releases-collaboration-service:0.6.0
+    restart: always
+    logging: *default-logging
   publication-tasks-generator:
     image: kanselarij/press-releases-publication-tasks-generator-service:0.1.0
     restart: always
@@ -134,10 +138,6 @@ services:
       - ./data/files:/share
     restart: always
     logging: *default-logging
-  collaboration:
-    image: kanselarij/press-releases-collaboration-service:0.5.0
-    restart: always
-    logging: *default-logging
   mailchimp-publication:
     image: kanselarij/press-releases-mailchimp-publication-service:0.1.0
     restart: always
@@ -149,3 +149,8 @@ services:
       MAILCHIMP_LIST_ID: 5480352579
       MAILCHIMP_INTEREST_CATEGORY_ID: fe04dcefd7
       MAILCHIMP_KIND_CATEGORY_ID: 4757bb85ec
+  api-publication:
+    image: kanselarij/press-releases-api-publication-service:0.1.0
+    restart: always
+    logging: *default-logging
+
