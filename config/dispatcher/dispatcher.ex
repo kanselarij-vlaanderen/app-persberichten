@@ -120,8 +120,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/government-fields/"
   end
 
-  post "/collaboration-activities/:id/share", @json do
-    forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/share"
+  get "/token-claims/*path", @json do
+    # Directly connecting to resource since there seems to be a bug in cache clearing
+    # when cache entries for multiple authorization groups must be cleared
+    forward conn, path, "http://resource/token-claims/"
   end
 
   post "/collaboration-activities/:id/claims", @json do
@@ -140,34 +142,32 @@ defmodule Dispatcher do
     forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/approvals"
   end
 
-  put "/collaboration-activities/:id", @json do
-    forward conn, [], "http://collaboration/collaboration-activities/" <> id <> ""
+  post "/collaboration-activities/:id/share", @json do
+    forward conn, [], "http://collaboration/collaboration-activities/" <> id <> "/share"
   end
 
-  post "/collaboration-activities/*path", @json do
-    forward conn, path, "http://cache/collaboration-activities/"
+  put "/collaboration-activities/*path", @json do
+    forward conn, path, "http://collaboration/collaboration-activities/"
   end
 
-  get "/collaboration-activities/*path", @json do
-    forward conn, path, "http://cache/collaboration-activities/"
+  delete "/collaboration-activities/*path", @json do
+    forward conn, path, "http://collaboration/collaboration-activities/"
+  end
+
+  match "/collaboration-activities/*path", @json do
+    # Directly connecting to resource since there seems to be a bug in cache clearing
+    # when cache entries for multiple authorization groups must be cleared
+    forward conn, path, "http://resource/collaboration-activities/"
   end
 
   get "/approval-activities/*path", @json do
-    forward conn, path, "http://cache/approval-activities/"
-  end
-
-  post "/press-release-activities/*path", @json do
-    forward conn, path, "http://cache/press-release-activities/"
-  end
-
-  get "/press-release-activities/*path", @json do
-    forward conn, path, "http://cache/press-release-activities/"
-  end
-
-  get "/token-claims/*path", @json do
     # Directly connecting to resource since there seems to be a bug in cache clearing
     # when cache entries for multiple authorization groups must be cleared
-    forward conn, path, "http://resource/token-claims/"
+    forward conn, path, "http://resource/approval-activities/"
+  end
+
+  match "/press-release-activities/*path", @json do
+    forward conn, path, "http://cache/press-release-activities/"
   end
 
   get "/csv/:id/parse", @json do
