@@ -106,7 +106,7 @@ services:
     restart: always
     logging: *default-logging
   collaboration:
-    image: kanselarij/press-releases-collaboration-service:0.6.0
+    image: kanselarij/press-releases-collaboration-service:0.7.0
     restart: always
     logging: *default-logging
   publication-tasks-generator:
@@ -153,4 +153,3 @@ services:
     image: kanselarij/press-releases-api-publication-service:0.1.0
     restart: always
     logging: *default-logging
-
