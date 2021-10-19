@@ -35,7 +35,6 @@ services:
       MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       DATABASE_COMPATIBILITY: "Virtuoso"
       DATABASE_OVERLOAD_RECOVERY: "on"
-      LOG_OUTGOING_SPARQL_QUERIES: "on"
     volumes:
       - ./config/authorization:/config
     restart: always
