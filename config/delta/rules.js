@@ -17,7 +17,7 @@ export default [
         match: {
             predicate: {
                 type: 'uri',
-                value: 'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedStartDateTime', // ebucore:publishedStartDateTime
+                value: 'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publishedStartDateTime',
             },
         },
         callback: {
