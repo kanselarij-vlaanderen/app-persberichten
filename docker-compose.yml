@@ -149,6 +149,6 @@ services:
       MAILCHIMP_INTEREST_CATEGORY_ID: fe04dcefd7
       MAILCHIMP_KIND_CATEGORY_ID: 4757bb85ec
   api-publication:
-    image: kanselarij/press-releases-api-publication-service:0.1.0
+    image: kanselarij/press-releases-api-publication-service:0.2.0
     restart: always
     logging: *default-logging
