@@ -114,6 +114,9 @@ services:
     logging: *default-logging
   email-publication:
     image: kanselarij/press-releases-email-generator-service:0.1.2
+    environment:
+      EMAIL_FROM: "noreply-vlivia@service.vlaanderen.be"
+      EMAIL_TO: "noreply-vlivia@service.vlaanderen.be"
     restart: always
     logging: *default-logging
   belga-publication:
@@ -131,7 +134,7 @@ services:
     environment:
       MAILBOX_URI: "http://themis.vlaanderen.be/id/mailboxes/8240e358-b914-47d7-9c9d-c873bcbb76d5"
       WELL_KNOWN_SERVICE: "test"
-      EMAIL_ADDRESS: "noreply@vlivia.vlaanderen.be"
+      EMAIL_ADDRESS: "noreply-vlivia@service.vlaanderen.be"
       EMAIL_CRON_PATTERN: "*/5 * * * *"
     volumes:
       - ./data/files:/share
