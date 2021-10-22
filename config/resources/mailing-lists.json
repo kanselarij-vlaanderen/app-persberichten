@@ -75,7 +75,7 @@
       },
       "relationships": {
         "contact-list": {
-          "predicate": "nco:ContactList",
+          "predicate": "nco:containsContact",
           "target": "contact-lists",
           "cardinality": "one",
           "inverse": true
