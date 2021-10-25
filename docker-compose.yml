@@ -109,11 +109,11 @@ services:
     restart: always
     logging: *default-logging
   publication-tasks-generator:
-    image: kanselarij/press-releases-publication-tasks-generator-service:0.1.1
+    image: kanselarij/press-releases-publication-tasks-generator-service:0.1.2
     restart: always
     logging: *default-logging
   email-publication:
-    image: kanselarij/press-releases-email-generator-service:0.1.2
+    image: kanselarij/press-releases-email-generator-service:0.2.0
     environment:
       EMAIL_FROM: "noreply-vlivia@service.vlaanderen.be"
       EMAIL_TO: "noreply-vlivia@service.vlaanderen.be"
