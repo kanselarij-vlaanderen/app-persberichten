@@ -55,6 +55,10 @@
       "attributes": {
         "name": {
           "type": "string",
+          "predicate": "vcard:fn"
+        },
+        "short-name": {
+          "type": "string",
           "predicate": "foaf:name"
         },
         "identifier": {
