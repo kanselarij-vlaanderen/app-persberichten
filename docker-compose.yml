@@ -68,7 +68,7 @@ services:
     restart: always
     logging: *default-logging
   login:
-    image: kanselarij/press-releases-acmidm-login-service:0.1.1
+    image: kanselarij/press-releases-acmidm-login-service:0.2.0
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "bd0483de-67e3-4ccf-8fcc-1aff6ff29675"
