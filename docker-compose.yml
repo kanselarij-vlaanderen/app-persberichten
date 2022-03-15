@@ -8,7 +8,7 @@ x-logging: &default-logging
 
 services:
   frontend:
-    image: kanselarij/frontend-persberichten:0.2.0
+    image: kanselarij/frontend-persberichten:0.2.1
     links:
       - identifier:backend
     environment:
