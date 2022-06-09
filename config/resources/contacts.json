@@ -133,6 +133,12 @@
           "cardinality": "many",
           "inverse": true
         },
+        "participations": {
+          "predicate": "prov:wasInfluencedBy",
+          "target": "press-release-activities",
+          "cardinality": "many",
+          "inverse": true
+        },
         "contacts": {
           "predicate": "dct:creator",
           "target": "contacts",

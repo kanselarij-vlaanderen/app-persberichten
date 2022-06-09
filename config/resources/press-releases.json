@@ -225,6 +225,11 @@
           "target": "organizations",
           "cardinality": "one"
         },
+        "participants": {
+          "predicate": "prov:wasInfluencedBy",
+          "target": "organizations",
+          "cardinality": "many"
+        },
         "creator": {
           "predicate": "dct:creator",
           "target": "users",
