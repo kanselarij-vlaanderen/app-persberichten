@@ -1,0 +1,89 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+DELETE {
+  GRAPH ?g {
+    ?mockUser foaf:firstName ?name .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?mockUser foaf:firstName ?name .
+  }
+  VALUES ?mockUser {
+    <http://themis.vlaanderen.be/id/gebruiker/ec8b05b7-c0ed-4f93-b8de-a46bc51dbf05>
+    <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d>
+    <http://themis.vlaanderen.be/id/gebruiker/43f679a1-a3a8-4a17-b00e-fae451696ec5>
+    <http://themis.vlaanderen.be/id/gebruiker/9975816b-755b-4b60-b2d2-144cedc04466>
+    <http://themis.vlaanderen.be/id/gebruiker/965a8576-16f5-4eab-9d2e-6fefa35712c0>
+    <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4>
+    <http://themis.vlaanderen.be/id/gebruiker/7b407bd5-0b74-4cc9-af5e-4082d13bacfa>
+    <http://themis.vlaanderen.be/id/gebruiker/8ebd1ba3-d6ec-4f2d-b2ca-461e78924529>
+    <http://themis.vlaanderen.be/id/gebruiker/26581692-16e3-4627-9872-23f45891cbe4>
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/ec8b05b7-c0ed-4f93-b8de-a46bc51dbf05> foaf:firstName "Jan" .
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> foaf:firstName "Hilde" .
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+   <http://themis.vlaanderen.be/id/gebruiker/43f679a1-a3a8-4a17-b00e-fae451696ec5> foaf:firstName "Bart" .
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/9975816b-755b-4b60-b2d2-144cedc04466> foaf:firstName "Ben" .
+  }
+}
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/965a8576-16f5-4eab-9d2e-6fefa35712c0> foaf:firstName "Zuhal" .
+  }
+}
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> foaf:firstName "Wouter" .
+  }
+}
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/7b407bd5-0b74-4cc9-af5e-4082d13bacfa> foaf:firstName "Mathias" .
+  }
+}
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://themis.vlaanderen.be/id/gebruiker/8ebd1ba3-d6ec-4f2d-b2ca-461e78924529> foaf:firstName "Lydia" .
+  }
+}
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     <http://themis.vlaanderen.be/id/gebruiker/26581692-16e3-4627-9872-23f45891cbe4> foaf:firstName "Benjamin" .
+  }
+}

@@ -1,0 +1,54 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+# Rename kabinet Beke to kabinet Crevits
+DELETE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/939c6810-34a3-0d9d-e5f1-85e22172dd16> foaf:name ?name ;
+    vcard:fn ?fullName .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/939c6810-34a3-0d9d-e5f1-85e22172dd16> foaf:name "Kabinet Crevits" ;
+    vcard:fn "Kabinet van de Vlaamse minister van Welzijn, Volksgezondheid en Gezin" .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/939c6810-34a3-0d9d-e5f1-85e22172dd16> foaf:name ?name ;
+    vcard:fn ?fullName .
+  }
+}
+
+;
+
+# Rename kabinet Crevits to Brouns
+DELETE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/25cd0094-0f57-32fd-4131-a6c0e604c258> foaf:name ?name .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/25cd0094-0f57-32fd-4131-a6c0e604c258> foaf:name "Kabinet Brouns" .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/25cd0094-0f57-32fd-4131-a6c0e604c258> foaf:name ?name .
+  }
+}
+
+;
+
+# Rename kabinet Dalle
+DELETE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/e590a821-6c9f-b836-c0fe-91999bfcddab> vcard:fn ?fullName .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/e590a821-6c9f-b836-c0fe-91999bfcddab> vcard:fn "Kabinet van de Vlaamse minister van Brussel, Jeugd, Media en Armoedebestrijding" .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/organisatie/e590a821-6c9f-b836-c0fe-91999bfcddab> vcard:fn ?fullName .
+  }
+}

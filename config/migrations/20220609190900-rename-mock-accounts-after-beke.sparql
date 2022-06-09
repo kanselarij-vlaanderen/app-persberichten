@@ -1,0 +1,32 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Rename Beke to Crevits
+DELETE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> foaf:firstName ?firstName ; foaf:familyName ?familyName .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> foaf:firstName "Hilde" ; foaf:familyName "Crevits" .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/72f9d832-7003-4398-b0a3-ab3e47eb2da4> foaf:firstName ?firstName ; foaf:familyName ?familyName .
+  }
+}
+
+
+# Rename Crevits to Brouns
+DELETE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> foaf:firstName ?firstName ; foaf:familyName ?familyName .
+  }
+} INSERT {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> foaf:firstName "Jo" ; foaf:familyName "Brouns" .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://themis.vlaanderen.be/id/gebruiker/7022c9db-0a28-4bdf-9fc1-afe7f389ea4d> foaf:firstName ?firstName ; foaf:familyName ?familyName .
+  }
+}
