@@ -1,0 +1,48 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vcard2006:	<http://www.w3.org/2006/vcard/ns#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+@prefix ns4:	<http://purl.org/dc/terms/> .
+@prefix ns5:	<http://mu.semte.ch/vocabularies/core/> .
+
+<http://themis.vlaanderen.be/id/gebruikersgroep/3597b310-a43c-11ec-a5c7-cf53c7b1e635>
+	rdf:type	vcard2006:Organization , foaf:Group ;
+	ns4:created	"2022-03-15T08:45:04.577Z"^^xsd:dateTime ;
+	ns5:uuid	"3597b310-a43c-11ec-a5c7-cf53c7b1e635" ;
+	ns4:identifier	"OVO000083" ;
+	  vcard2006:fn	"Agentschap voor Landbouw en Visserij" ;
+   	foaf:name	"Agentschap voor Landbouw en Visserij" .
+
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://themis.vlaanderen.be/id/gebruikersgroep/> .
+@prefix vcard2006:	<http://www.w3.org/2006/vcard/ns#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix ns6:	<http://mu.semte.ch/vocabularies/core/> .
+
+ns1:d8a05ec0-a3cb-11ec-8497-5f8eaa3e4453
+	rdf:type	vcard2006:Organization , foaf:Group ;
+	ns5:created	"2022-03-14T19:20:44.973Z"^^xsd:dateTime ;
+	ns6:uuid	"d8a05ec0-a3cb-11ec-8497-5f8eaa3e4453" ;
+	ns5:identifier	"OVO001835" ;
+	  vcard2006:fn	"Agentschap Binnenlands Bestuur" ;
+	  foaf:name	"Agentschap Binnenlands Bestuur" .
+
+
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://themis.vlaanderen.be/id/gebruikersgroep/> .
+@prefix vcard2006:	<http://www.w3.org/2006/vcard/ns#> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix ns6:	<http://mu.semte.ch/vocabularies/core/> .
+
+ns1:f1d92530-a433-11ec-a817-3d3cd7d450bf
+	rdf:type	vcard2006:Organization , foaf:Group ;
+	ns5:created	"2022-03-15T07:45:54.947Z"^^xsd:dateTime ;
+	ns6:uuid	"f1d92530-a433-11ec-a817-3d3cd7d450bf" ;
+	  vcard2006:fn	"Departement Kanselarij en Buitenlandse Zaken" ;
+   	foaf:name	"Departement Kanselarij en Buitenlandse Zaken" ;
+	ns5:identifier	"OVO000032" .

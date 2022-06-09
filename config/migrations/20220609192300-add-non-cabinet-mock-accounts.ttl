@@ -1,0 +1,44 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+
+<http://themis.vlaanderen.be/id/gebruiker/154a385e-3bdc-4102-a189-f4aa66c6a0ea> a foaf:Person ;
+    mu:uuid "154a385e-3bdc-4102-a189-f4aa66c6a0ea" ;
+    foaf:firstName "Patricia" ;
+    foaf:familyName "De Clercq" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/1f837b9e-9c72-4500-b844-ea7a8dba1035> .
+
+<http://themis.vlaanderen.be/id/account/1f837b9e-9c72-4500-b844-ea7a8dba1035> a foaf:OnlineAccount ;
+    mu:uuid "1f837b9e-9c72-4500-b844-ea7a8dba1035" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+<http://themis.vlaanderen.be/id/gebruikersgroep/3597b310-a43c-11ec-a5c7-cf53c7b1e635> foaf:member <http://themis.vlaanderen.be/id/gebruiker/154a385e-3bdc-4102-a189-f4aa66c6a0ea> .
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/7a00a756-c676-44ef-9746-5fd1e666d1e8> a foaf:Person ;
+    mu:uuid "7a00a756-c676-44ef-9746-5fd1e666d1e8" ;
+    foaf:firstName "Jeroen" ;
+    foaf:familyName "Windey" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/3afc1c6e-b6e7-4d14-83ad-669efd02bf10> .
+
+<http://themis.vlaanderen.be/id/account/3afc1c6e-b6e7-4d14-83ad-669efd02bf10> a foaf:OnlineAccount ;
+    mu:uuid "3afc1c6e-b6e7-4d14-83ad-669efd02bf10" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+<http://themis.vlaanderen.be/id/gebruikersgroep/d8a05ec0-a3cb-11ec-8497-5f8eaa3e4453> foaf:member <http://themis.vlaanderen.be/id/gebruiker/7a00a756-c676-44ef-9746-5fd1e666d1e8> .
+
+
+
+
+
+<http://themis.vlaanderen.be/id/gebruiker/5ce30d81-78db-4316-ac9f-bba9cb386028> a foaf:Person ;
+    mu:uuid "5ce30d81-78db-4316-ac9f-bba9cb386028" ;
+    foaf:firstName "Julie" ;
+    foaf:familyName "Bynens" ;
+    foaf:account <http://themis.vlaanderen.be/id/account/b7cde369-968c-46e4-8ec5-e748c19091d8> .
+
+<http://themis.vlaanderen.be/id/account/b7cde369-968c-46e4-8ec5-e748c19091d8> a foaf:OnlineAccount ;
+    mu:uuid "b7cde369-968c-46e4-8ec5-e748c19091d8" ;
+    foaf:accountServiceHomepage "https://github.com/lblod/mock-login-service" .
+
+<http://themis.vlaanderen.be/id/gebruikersgroep/f1d92530-a433-11ec-a817-3d3cd7d450bf> foaf:member <http://themis.vlaanderen.be/id/gebruiker/5ce30d81-78db-4316-ac9f-bba9cb386028> .
