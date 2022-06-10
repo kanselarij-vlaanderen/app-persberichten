@@ -174,6 +174,10 @@ defmodule Dispatcher do
     forward conn, [], "http://csv-file-parser/csv/" <> id <> "/parse"
   end
 
+  get "/images/*path", @any do
+    forward conn, path, "http://static-file/images/"
+  end
+
   match "/*_", %{ last_call: true } do
     send_resp(conn, 404, "Route not found.  See config/dispatcher.ex")
   end

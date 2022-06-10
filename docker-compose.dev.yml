@@ -26,15 +26,21 @@ services:
     restart: "no"
   file:
     restart: "no"
+  static-file:
+    restart: "no"
   csv-file-parser:
+    restart: "no"
+  collaboration:
     restart: "no"
   publication-tasks-generator:
     restart: "no"
-  email-publication:
-    restart: "no"
   belga-publication:
+    restart: "no"
+  email-publication:
     restart: "no"
   mail-delivery:
     restart: "no"
-  collaboration:
+  mailchimp-publication:
+    restart: "no"
+  api-publication:
     restart: "no"

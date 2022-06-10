@@ -1,0 +1,41 @@
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
+<http://themis.vlaanderen.be/id/file/ecb8008d-1883-498a-aaa9-3cb8d4988de8> a nfo:FileDataObject ;
+    mu:uuid "ecb8008d-1883-498a-aaa9-3cb8d4988de8" ;
+    nfo:fileName "email-template-kabinet.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "13362"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" .
+
+<share://57552e2b-70f2-4af9-bdf9-e97f33ce78e9.hbs> a nfo:FileDataObject ;
+    mu:uuid "57552e2b-70f2-4af9-bdf9-e97f33ce78e9" ;
+    nfo:fileName "57552e2b-70f2-4af9-bdf9-e97f33ce78e9.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "13362"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" ;
+    nie:dataSource <http://themis.vlaanderen.be/id/file/ecb8008d-1883-498a-aaa9-3cb8d4988de8> .
+
+
+<http://themis.vlaanderen.be/id/file/970c8911-8944-4914-9c23-dc21e7c342ed> a nfo:FileDataObject ;
+    mu:uuid "970c8911-8944-4914-9c23-dc21e7c342ed" ;
+    nfo:fileName "email-template-administratie.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "13472"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" .
+
+<share://de881891-5966-4954-b90e-0f5b711e9f4c.hbs> a nfo:FileDataObject ;
+    mu:uuid "de881891-5966-4954-b90e-0f5b711e9f4c" ;
+    nfo:fileName "de881891-5966-4954-b90e-0f5b711e9f4c.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "13472"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" ;
+    nie:dataSource <http://themis.vlaanderen.be/id/file/970c8911-8944-4914-9c23-dc21e7c342ed> .
