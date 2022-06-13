@@ -119,7 +119,7 @@ services:
     restart: always
     logging: *default-logging
   belga-publication:
-    image: kanselarij/press-releases-belga-publication-service:0.1.1
+    image: kanselarij/press-releases-belga-publication-service:0.1.2
     volumes:
       - ./data/belga:/share
     environment:
