@@ -149,16 +149,18 @@ services:
     restart: always
     logging: *default-logging
   mailchimp-publication:
-    image: kanselarij/press-releases-mailchimp-publication-service:0.1.0
-    restart: always
-    logging: *default-logging
+    image: kanselarij/press-releases-mailchimp-publication-service:0.2.0
     environment:
       MAILCHIMP_API: 'api key'
       MAILCHIMP_REPLY_TO: 'reply-to address'
-      MAILCHIMP_FROM_NAME: Kaleidos-test
+      MAILCHIMP_FROM_NAME: Vlivia-test
       MAILCHIMP_LIST_ID: 5480352579
       MAILCHIMP_INTEREST_CATEGORY_ID: fe04dcefd7
       MAILCHIMP_KIND_CATEGORY_ID: 4757bb85ec
+    volumes:
+      - ./data/files:/share
+    restart: always
+    logging: *default-logging
   api-publication:
     image: kanselarij/press-releases-api-publication-service:0.2.0
     restart: always

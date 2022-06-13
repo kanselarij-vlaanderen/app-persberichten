@@ -1,0 +1,35 @@
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+# Mail template for administration
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?organization ext:mailchimpTemplate <http://themis.vlaanderen.be/id/file/4a936380-c37d-42f4-a8b0-9a88a2e4c906> .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?organization a vcard:Organization .
+
+    VALUES ?organization {
+      <http://themis.vlaanderen.be/id/gebruikersgroep/3597b310-a43c-11ec-a5c7-cf53c7b1e635>
+      <http://themis.vlaanderen.be/id/gebruikersgroep/d8a05ec0-a3cb-11ec-8497-5f8eaa3e4453>
+      <http://themis.vlaanderen.be/id/gebruikersgroep/f1d92530-a433-11ec-a817-3d3cd7d450bf>
+    }
+  }
+}
+
+;
+
+# Mail template for cabinet
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?organization ext:mailchimpTemplate <http://themis.vlaanderen.be/id/file/d5dd7233-f0fa-47e8-a01c-e3e62e9278ec> .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?organization a vcard:Organization .
+    FILTER NOT EXISTS { ?organization ext:mailchimpTemplate ?template }
+  }
+}

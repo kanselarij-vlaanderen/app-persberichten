@@ -1,0 +1,40 @@
+@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
+<http://themis.vlaanderen.be/id/file/d5dd7233-f0fa-47e8-a01c-e3e62e9278ec> a nfo:FileDataObject ;
+    mu:uuid "d5dd7233-f0fa-47e8-a01c-e3e62e9278ec" ;
+    nfo:fileName "email-template-kabinet.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "14207"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" .
+
+<share://873a5aa7-7d0b-40c2-862a-b6d6921dcc09.hbs> a nfo:FileDataObject ;
+    mu:uuid "873a5aa7-7d0b-40c2-862a-b6d6921dcc09" ;
+    nfo:fileName "873a5aa7-7d0b-40c2-862a-b6d6921dcc09.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "14207"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" ;
+    nie:dataSource <http://themis.vlaanderen.be/id/file/d5dd7233-f0fa-47e8-a01c-e3e62e9278ec> .
+
+<http://themis.vlaanderen.be/id/file/4a936380-c37d-42f4-a8b0-9a88a2e4c906> a nfo:FileDataObject ;
+    mu:uuid "4a936380-c37d-42f4-a8b0-9a88a2e4c906" ;
+    nfo:fileName "email-template-administratie.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "14207"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" .
+
+<share://87d9416f-8efb-4a85-a0bd-f53d658239c0.hbs> a nfo:FileDataObject ;
+    mu:uuid "87d9416f-8efb-4a85-a0bd-f53d658239c0" ;
+    nfo:fileName "87d9416f-8efb-4a85-a0bd-f53d658239c0.hbs" ;
+    dct:format "text/x-handlebars-template" ;
+    nfo:fileSize "14207"^^xsd:integer ;
+    dct:created "2022-06-01T08:00:00.000Z"^^xsd:dateTime ;
+    dbpedia:fileExtension "hbs" ;
+    nie:dataSource <http://themis.vlaanderen.be/id/file/4a936380-c37d-42f4-a8b0-9a88a2e4c906> .
