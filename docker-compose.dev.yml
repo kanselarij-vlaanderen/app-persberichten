@@ -39,6 +39,8 @@ services:
   email-publication:
     restart: "no"
   mail-delivery:
+    environment:
+      EMAIL_PROTOCOL: "smtp"
     restart: "no"
   mailchimp-publication:
     restart: "no"
