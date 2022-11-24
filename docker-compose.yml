@@ -138,12 +138,16 @@ services:
     restart: always
     logging: *default-logging
   mail-delivery:
-    image: redpencil/deliver-email-service:0.1.3
+    image: redpencil/deliver-email-service:0.3.1
     environment:
       MAILBOX_URI: "http://themis.vlaanderen.be/id/mailboxes/8240e358-b914-47d7-9c9d-c873bcbb76d5"
       WELL_KNOWN_SERVICE: "test"
       EMAIL_ADDRESS: "noreply-vlivia@service.vlaanderen.be"
       EMAIL_CRON_PATTERN: "*/5 * * * *"
+      EMAIL_PROTOCOL: "MS_Graph_API"
+      MS_GRAPH_API_CLIENT_ID: "fe308fab-6938-4ab1-966f-f09d961c981d"
+      MS_GRAPH_API_TENANT_ID: "0c0338a6-9561-4ee8-b8d6-4e89cbd520a0"
+      MS_GRAPH_API_CLIENT_SECRET: "OUR SECRET"
     volumes:
       - ./data/files:/share
     restart: always
