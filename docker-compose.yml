@@ -138,7 +138,7 @@ services:
     restart: always
     logging: *default-logging
   mail-delivery:
-    image: redpencil/deliver-email-service:0.3.2
+    image: redpencil/deliver-email-service:0.3.3
     environment:
       MAILBOX_URI: "http://themis.vlaanderen.be/id/mailboxes/8240e358-b914-47d7-9c9d-c873bcbb76d5"
       WELL_KNOWN_SERVICE: "test"
